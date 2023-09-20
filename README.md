@@ -6,11 +6,13 @@ State your app in a nutshell, or one-sentence pitch. Give some elaboration on wh
 This browser based web application to ...
 
 ## 2. Names of Contributors
-List team members and/or short bio's here... 
-* Hi, my name is Ranveer Rai. I am excited to work with my team in COMP 1800!
-* Hi, my name is Chelsea Pang. I am excited for this project! 
-* ...
-	
+
+List team members and/or short bio's here...
+
+- Hi, my name is Ranveer Rai. I am excited to work with my team in COMP 1800!
+- Hi, my name is Chelsea Pang. I am excited for this project!
+- Hi, my name is ELena Zhu, I am excited for this project!
+
 ## 3. Technologies and Resources Used
 
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
