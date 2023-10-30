@@ -11,7 +11,7 @@ List team members and/or short bio's here...
 
 - Hi, my name is Ranveer Rai. I am excited to work with my team in COMP 1800!
 - Hi, my name is Chelsea Pang. I am excited for this project!
-- Hi, my name is ELena Zhu, I am excited for this project!
+- Hi, my name is Elena Zhu, I am excited to work with our team!
 - Hi, my name Jeremy Arciaga, I am excited to learn more as a team in tech!
 
 ## 3. Technologies and Resources Used
