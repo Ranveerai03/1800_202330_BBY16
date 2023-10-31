@@ -2,3 +2,4 @@
 *.logs
 node_modules/
 .vscode/
+firebaseAPI_team16BBY.js
