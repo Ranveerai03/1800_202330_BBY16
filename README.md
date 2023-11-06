@@ -2,8 +2,7 @@
 
 ## 1. Project Description
 
-State your app in a nutshell, or one-sentence pitch. Give some elaboration on what the core features are.  
-This browser based web application to ...
+SnowGo is a web application to help Metro Vancouver commuters commute efficiently during the winter by uploading real road photos affected by snow and viewing these photos before you start your commute, unlike Google Maps, which only shows delays and accidents, but not the weather conditions on the roads.
 
 ## 2. Names of Contributors
 
