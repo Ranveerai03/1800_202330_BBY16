@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SnowGo - Saved</title>
+    <title>SnowGo - Search</title>
     <meta name="comp1800 template" content="My 1800 App" />
 
     <!-- Required meta tags -->
@@ -21,6 +21,20 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script> -->
+
+<!-------------------------------------------------------->
+    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+    <!-------------------------------------------------------->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
+    />
 
     <!-- Other libraries go here -->
 
@@ -49,20 +63,33 @@
         </button>
       </div>
 
-      <div class="cards">
-        <div id="destination1">
-          <p class="destination-name">BCIT</p>
-          <p class="destination-description">Current road conditions: Snow</p>
-          <p class="destination-timestamp"><i>Last updated: 11:00am</i></p>
-        </div>
-
-        <div id="destination2">
-          <p class="destination-name">Metropolis at Metrotown</p>
-          <p class="destination-description">Current road conditions: Snow</p>
-          <p class="destination-timestamp"><i>Last updated: 10:00am</i></p>
+      <div class="container">
+        <h1>Some popular Searches</h1>
+        <!-- Here is the container for cards  -->
+        <div class="container">
+          <div id="searches-go-here" class="row row-cols-auto"></div>
         </div>
       </div>
-    </div>
+
+      <!-- our own footer goes here-->
+    <nav id="footerPlaceholder"></nav>
+    <!-- Templates for general use, not displayed -->
+    <template id="searchCardTemplate">
+      <div class="card py-2 mx-2" style="width: 18rem">
+        <img class="card-image card-img-top" src=" ..." alt="..." />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <br />
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a class="btn btn-primary card-href">Read more ...</a>
+        </div>
+      </div>
+    </template>
+
+
 
     <div class="bottomNav">
       <div class="icons" id="homeBtn">
@@ -92,5 +119,6 @@
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
     <script src="../../public/scripts/main.js"></script>
+    <script src="../../public/scripts/search.js"></script>
   </body>
 </html>
