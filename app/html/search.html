@@ -1,53 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>SnowGo - Search</title>
-    <meta name="comp1800 template" content="My 1800 App" />
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <title>SnowGo - Search</title>
+  <meta name="comp1800 template" content="My 1800 App" />
 
-    <!-- Bootstrap Library CSS CDN go here -->
-    <!-- <link
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     /> -->
-    <!-- Boostrap Library JS CDN  go here -->
-    <!-- <script
+  <!-- Boostrap Library JS CDN  go here -->
+  <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script> -->
 
-<!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
-    />
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
-    <!-- Other libraries go here -->
+  <!-- Other libraries go here -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet">
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
 
-    <!-- Link to styles of your own -->
-    <link rel="stylesheet" href="../../public/styles/styleSearch.css" />
-  </head>
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="../../public/styles/styleSearch.css" />
 
-  <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-    <!-- Stuff for body goes here -->
-    <div class="container">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
+  <!-- Stuff for body goes here -->
+  <!-- <div class="container">
       <header>Search for Road Conditions</header>
 
       <div class="input-group">
@@ -64,17 +77,17 @@
       </div>
 
       <div class="container">
-        <h1>Some popular Searches</h1>
-        <!-- Here is the container for cards  -->
-        <div class="container">
+        <h1>Some popular Searches</h1> -->
+  <!-- Here is the container for cards  -->
+  <!-- <div class="container">
           <div id="searches-go-here" class="row row-cols-auto"></div>
         </div>
-      </div>
+      </div> -->
 
-      <!-- our own footer goes here-->
-    <nav id="footerPlaceholder"></nav>
-    <!-- Templates for general use, not displayed -->
-    <template id="searchCardTemplate">
+  <!-- our own footer goes here-->
+  <!-- <nav id="footerPlaceholder"></nav> -->
+  <!-- Templates for general use, not displayed -->
+  <!-- <template id="searchCardTemplate">
       <div class="card py-2 mx-2" style="width: 18rem">
         <img class="card-image card-img-top" src=" ..." alt="..." />
         <div class="card-body">
@@ -87,38 +100,67 @@
           <a class="btn btn-primary card-href">Read more ...</a>
         </div>
       </div>
-    </template>
+    </template> -->
 
 
 
-    <div class="bottomNav">
-      <div class="icons" id="homeBtn">
-        <img class="innerIcon" src="../../public/images/home.png" />
-      </div>
-      <div class="icons" id="bookmarkBtn">
-        <img class="innerIcon" src="../../public/images/bookmark.png" />
-      </div>
-      <div class="icons middleIcon" id="plusBtn">
-        <img
-          class="innerIcon plusIcon"
-          src="../../public/images/whitePlus.png"
-        />
-      </div>
-      <div class="icons" id="searchBtn">
-        <img class="innerIcon" src="../../public/images/loupe.png" />
-      </div>
-      <div class="icons" id="profileBtn">
-        <img class="innerIcon" src="../../public/images/profile-user.png" />
-      </div>
+  <div class="bottomNav">
+    <div class="icons" id="homeBtn">
+      <img class="innerIcon" src="../../public/images/home.png" />
     </div>
+    <div class="icons" id="bookmarkBtn">
+      <img class="innerIcon" src="../../public/images/bookmark.png" />
+    </div>
+    <div class="icons middleIcon" id="plusBtn">
+      <img class="innerIcon plusIcon" src="../../public/images/whitePlus.png" />
+    </div>
+    <div class="icons" id="searchBtn">
+      <img class="innerIcon" src="../../public/images/loupe.png" />
+    </div>
+    <div class="icons" id="profileBtn">
+      <img class="innerIcon" src="../../public/images/profile-user.png" />
+    </div>
+  </div>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
 
-    <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
-    <script src="../../public/scripts/main.js"></script>
-    <script src="../../public/scripts/search.js"></script>
-  </body>
+  <!-- Link to scripts of your own -->
+  <!-- <script src="./scripts/script.js"></script> -->
+  <script src="../../public/scripts/main.js"></script>
+  <script src="../../public/scripts/search.js"></script>
+
+  <!-- Load the `mapbox-gl-geocoder` plugin. -->
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+  <div id="map"></div>
+
+  <script>
+    // TO MAKE THE MAP APPEAR YOU MUST
+    // ADD YOUR ACCESS TOKEN FROM
+    // https://account.mapbox.com
+    mapboxgl.accessToken = 'pk.eyJ1IjoiY3BhbmczMSIsImEiOiJjbG90YjN6bzcwNzc3Mmtucm0zZXY5d3hoIn0.keVfwi2vwmOjoV_HtchkgQ';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+      style: 'mapbox://styles/cpang31/clotbq4aw008m01r75p403pgp',
+      center: [-79.4512, 43.6568],
+      zoom: 13
+    });
+
+    // Add the control to the map.
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+      })
+    );
+  </script>
+
+</body>
+
 </html>
