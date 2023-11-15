@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review</title>
+    <link rel="stylesheet" href="../../public/styles/stylePlus.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="titleCard">
+                <h1>Add a Review</h1>
+            </div>
+            
+            <div class="back">
+                <img src="../../public/images/backButton.png" class="backIcon"></div>
+
+            <div class="optionCards">
+                <div class="locationCard">
+                    <h1>Add a location</h1>
+                </div>
+
+                <div class="imageCard">
+                    <h1>Take a camera photo</h1>
+                    <div class="cameraIcon"><img src="../../public/images/cameraIcon.png"/></div>
+                </div>
+                <input type="file" id="mypic-input" accept="image/*" />
+                <img id="mypic-goes-here"/>
+            </div>
+
+            <div class="review">
+                <h2>Write a review below:</h2>
+                <textarea id="description" rows="4" cols="50"></textarea>
+            </div>
+
+            <button type="button" class="btn btn-info" onclick="savePost()">Post Review Now</button>
+        </div>
+    </div>
+
+    <div class="bottomNav">
+        <div class="icons"><img class="innerIcon" src="../../public/images/home.png"></div>
+        <div class="icons"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+        <div class="icons middleIcon"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png"></div>
+        <div class="icons"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+        <div class="icons"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+    </div>
+    <script src="../../public/scripts/plus.js"></script>
+</body>

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0%;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+    .wrapper {
+        overflow: hidden;
+        background-color: #E8E9EC;
+    }
+    
+    .container {
+        overflow-x: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 100vh;
+        margin: 10px 10px;
+    }
+
+    .titleCard{
+        display: flex;
+        height: 30vh;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        font-size: 20px;
+        background-color: #8CC2E3;
+        border-radius: 55px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    .backIcon {
+        display: flex;
+        height: 50%;
+        margin-bottom: 50px;
+    }   
+    
+    .optionCards{
+        margin-top: 0%;
+        margin-bottom: 0%;
+        font-size: 80%;
+    }
+
+    .back {
+        width: 10%;
+        height: 10%;
+        margin-bottom: 50px;
+    }
+
+
+    .locationCard{
+        display: flex;
+        height: 8vh;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #FFFFFF;
+        border-radius: 55px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    .imageCard{
+        display: flex;
+        height: 8vh;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #FFFFFF;
+        border-radius: 55px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    .cameraIcon {
+        display: flex;
+        padding-top: 30px;
+        padding-bottom: 15px;
+        justify-content: space-evenly;
+        border-radius: 55px;
+    }
+
+    .mypic-input {
+
+    }
+
+    .bottomNav{
+        height: 10vh;
+        flex: 1 100%;
+        background-color: #FFFFFF;
+        border-radius: 20px 20px 0px 0px;
+        border-top: 1px solid black;
+        position: sticky;
+        bottom: 0px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .icons{
+        /* border: 1px solid red; */
+        align-self: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    
+    }
+    .innerIcon{
+        /* border: 1px solid green; */
+        width: 35%;
+        height: 35%;
+        align-self: center;
+    
+    }
+    .middleIcon{
+        background-color: #081335;
+        border-radius: 20px;
+        width: 85%;
+        height: 85%;
+        margin-bottom: 12%;
+    }
+    .plusIcon{
+        width: 50%;
+        height: 50%;
+    }
+    
