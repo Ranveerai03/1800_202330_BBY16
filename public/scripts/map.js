@@ -115,7 +115,7 @@ function showMap() {
             features.push({
               'type': 'Feature',
               'properties': {
-                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="locationReviews.html?id=${doc.id}&locationName=${event_name}" title="Get info about location">Read more</a>`
               },
               'geometry': {
                 'type': 'Point',

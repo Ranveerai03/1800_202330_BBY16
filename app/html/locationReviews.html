@@ -26,7 +26,7 @@
   <!-- Other libraries go here -->
 
   <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="../../public/styles/styleSaved.css" />
+  <link rel="stylesheet" href="../../public/styles/styleLocationReviews.css" />
 </head>
 
 <body>
@@ -34,35 +34,31 @@
   <!-- Your HTML Layout go here -->
   <!------------------------------>
   <!-- Stuff for body goes here -->
-  <div class="container">
-    <header>Saved Road Conditions</header>
-
-    <div class="cards">
-      <div id="route1">
-        <p class="route-name">Route 1 Name</p>
-        <p class="route-description">Current road conditions: Snow</p>
-        <p class="route-timestamp"><i>Last updated: 10:00am</i></p>
+  <div class="wrapper">
+    <div class="container">
+      <header>Location Details</header>
+      <div class="name">
+        <div id="name-goes-here"></div>
       </div>
-
-      <div id="route2">
-        <p class="route-name">Route 2 Name</p>
-        <p class="route-description">Current road conditions: Snow</p>
-        <p class="route-timestamp"><i>Last updated: 10:00am</i></p>
+      <div class="view-option">
+        <input type="button" class="button" id="reviews" value="Reviews" />
+        <div></div>
+        <input type="button" class="button" id="photos" value="Photos" />
       </div>
-
-      <div id="add">
-        + Add more routes
-      </div>
+      <template id="review-card">
+        <div class="card">
+          <div id="reviews-go-here"></div>
+        </div>
+      </template>
     </div>
-
-  </div>
-  <div class="bottomNav">
-    <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
-    <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
-    <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png">
+    <div class="bottomNav">
+      <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
+      <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+      <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon"
+          src="../../public/images/whitePlus.png"></div>
+      <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+      <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
     </div>
-    <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
-    <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
   </div>
 
   <!---------------------------------------------->
@@ -72,6 +68,8 @@
   <!-- Link to scripts of your own -->
   <!-- <script src="./scripts/script.js"></script> -->
   <script src="../../public/scripts/main.js"></script>
+  <script src="../../public/scripts/locationReviews.js"></script>
+
 </body>
 
 </html>
