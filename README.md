@@ -43,9 +43,9 @@ Here are some known bugs:
 
 What we'd like to build in the future:
 
-- ...
-- ...
-- ...
+- Introducing language options to cater to non-English-speaking users.
+- Providing users with the ability to upload videos.
+- Extending our coverage area to better serve a larger number of British Columbia residents.
 
 ## 7. Contents of Folder
 
