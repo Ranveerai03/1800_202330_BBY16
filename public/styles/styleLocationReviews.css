@@ -1,7 +1,9 @@
+
 * {
     margin: 0px;
     padding: 0px;
     font-size: 16pt;
+    font-family: Comfortaa;
 }
 
 body,
@@ -76,8 +78,23 @@ header {
 }
 
 #name-goes-here {
-    font-size: 24pt;
+    font-size: 30pt;
+    font-weight:bold;
+    text-align: center;
+    color:#081335;
   }
+
+  #city-goes-here {
+    color:#333d5e
+  }
+
+  #province-goes-here {
+    color:#333d5e
+  }
+
+.address {
+    text-align: center;
+}
 
 .card {
     display: flex;

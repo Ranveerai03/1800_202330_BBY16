@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>SnowGo - Saved</title>
+  <title>SnowGo - Location Reviews</title>
   <meta name="comp1800 template" content="My 1800 App" />
 
   <!-- Required meta tags -->
@@ -24,6 +24,17 @@
     ></script> -->
 
   <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Onest&family=Young+Serif&display=swap"
+    rel="stylesheet">
 
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="../../public/styles/styleLocationReviews.css" />
@@ -40,25 +51,41 @@
       <div class="name">
         <div id="name-goes-here"></div>
       </div>
+      <div class="address">
+        <span id="city-goes-here"></span>
+        <span id="province-goes-here"></span>
+      </div>
       <div class="view-option">
         <input type="button" class="button" id="reviews" value="Reviews" />
         <div></div>
         <input type="button" class="button" id="photos" value="Photos" />
       </div>
-      <template id="review-card">
-        <div class="card">
-          <div id="reviews-go-here"></div>
+
+      <div class="card-container">
+        <div id="reviewCardGroup">
+          <!-- Add your card templates here -->
         </div>
-      </template>
+      </div>
+
+      <template id="card-template">
+        <div class="card">
+          <!-- <div id="reviews-go-here"></div> -->
+          <p class="condition"></p>
+          <p class="icy">placeholder</p>
+          <p class="time">placeholder</p>
+          <p class="comment">placeholder</p>
+        </div>
     </div>
-    <div class="bottomNav">
-      <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
-      <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
-      <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon"
-          src="../../public/images/whitePlus.png"></div>
-      <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
-      <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+    </template>
+  </div>
+  <div class="bottomNav">
+    <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
+    <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+    <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png">
     </div>
+    <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+    <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+  </div>
   </div>
 
   <!---------------------------------------------->
@@ -67,7 +94,8 @@
 
   <!-- Link to scripts of your own -->
   <!-- <script src="./scripts/script.js"></script> -->
-  <script src="../../public/scripts/main.js"></script>
+  <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+  <!-- <script src="../../public/scripts/main.js"></script> -->
   <script src="../../public/scripts/locationReviews.js"></script>
 
 </body>
