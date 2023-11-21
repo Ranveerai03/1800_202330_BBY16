@@ -69,12 +69,27 @@ html, body {
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     }
 
+    .writeCard{
+        display: flex;
+        height: 8vh;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        background-color: #FFFFFF;
+        border-radius: 55px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
     .imageCard{
         display: flex;
         height: 8vh;
         width: 100%;
         align-self: center;
         justify-content: center;
+        margin-top: 20px;
         margin-bottom: 20px;
         padding: 10px;
         background-color: #FFFFFF;

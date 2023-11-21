@@ -1,3 +1,7 @@
+document.getElementById("button").onclick = function(){
+  location.href = "../../app/html/main.html"
+}
+
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 

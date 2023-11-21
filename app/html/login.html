@@ -32,50 +32,54 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
     <!-- Other libraries and styles of your own -->
-    <link rel="stylesheet" href="styles/stylelogin.css">
+    <link rel="stylesheet" href="../../public/styles/stylelogin.css">
 </head>
 
 <body>
     <!------------------------------>
     <!-- Your HTML Layout go here -->
-    <!------------------------------>
+    <div class="wrapper">
+        <div class="container">
 
-    <!-- our own navbar goes here -->
-    <!-- <nav id="navbarPlaceholder"></nav> -->
+            <!-- our own navbar goes here -->
+            <!-- <nav id="navbarPlaceholder"></nav> -->
 
-    <!-- Background Image -->
-    <div class="background-img">
+            <!-- Background Image -->
 
-    <!-- Login -->
-        <div class = "login">
-            <h1>Sign In</h1>
-            <div class = "input">
-                <input type="text" class="input1" placeholder="Email" required>
-            </div>
-            <div class = "input">
-                <input type="password" class="input1" placeholder="Password" required>
-            </div>
-            <div class="check">
-                <label><input type="checkbox">Remember Me</label>
-            </div>
-            <div class="button">
-                <button type="button" class="btn">Sign in</button>
-            </div>
+            <!-- Login -->
+                <div class = "login">
+                    <div class="signIn">
+                        <h1>Sign In</h1>
+                    </div>
+
+                    <div class = "input">
+                        <input type="text" class="input1" placeholder="Email" required>
+                    </div>
+                    <div class = "input">
+                        <input type="password" class="input1" placeholder="Password" required>
+                    </div>
+                    <div class="check">
+                        <label><input type="checkbox">Remember Me</label>
+                    </div>
+                    <div class="button">
+                        <button class="btn">Sign in</button>
+                    </div>
+                </div>
+
+        </div>
+
+            <footer class="footer fixed-bottom">
+                <p class="copyright">&copy; SnowGo 2023. All rights reserved.</p>
+                </footer>
+
+            <!-- our own footer goes here-->
+            <!-- <nav id="footerPlaceholder"></nav> -->
+
+            <!---------------------------------------------->
+            <!-- Your own JavaScript functions go here    -->
+            <!---------------------------------------------->
+            <script src="../../public/scripts/authentication.js"></script>
     </div>
-
-    </div>
-
-    <footer class="footer fixed-bottom">
-        <p class="copyright">&copy; SnowGo 2023. All rights reserved.</p>
-      </footer>
-
-    <!-- our own footer goes here-->
-    <!-- <nav id="footerPlaceholder"></nav> -->
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="../../public/scripts/authentication.js"></script>
 
 </body>
 

@@ -1,40 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
 *{
     padding: 0px;
     margin: 0px;
+    font-family: 'Open Sans Light', sans-serif;
   }
-  body{
+
+  .wrapper {
+    overflow: hidden;
+    background-color: #E8E9EC;
+    padding-bottom: 0%;
+    padding-top: 0%;
+}
+
+.container {
+    justify-content: center;
+    overflow-x: hidden;
+    display: flex;
     width: 100vw;
     height: 100vh;
-    background-color: #E8E9EC;
-    overflow: hidden;
-  }
-
+    margin: 10px 10px;
+}
  
-
-
-.login h1{
-       text-align: center;
-       font-size: 50px;
-       font-weight: 600;
-       margin-top: 15%;
-    }
-
-.input{
-    position: relative;
-    width: 100%;
-    height: 30px;
-    margin-bottom: 10px;
-    border: 1px solid red;
-
+.signIn{
+  display: flex;
+  position: relative;
+  height: 10vh;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-size: 20px;
+  background-color: #8CC2E3;
+  border-radius: 55px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-.btn{
-    background-color: #081335;
-    border: none;
-    font-size: 20px;
-    border: 8px;
-    color:aliceblue;
+.login .input {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
+
+::placeholder {
+  color: #fff;
+}
+
+.login .input .input1 {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  outline: black;
+  border-bottom: 2px; 
+  color: #8CC2E3;
+  width: 100%;
+  height: 100%;
+}
+
+.check {
+  margin-bottom: 20px;
+}
+
+.login .button {
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: black;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 2px;
+  color: #fff;
+}
+
+button:active {
+  font-size: 24px;
+}
+
 #firebase-auth-container{
     background-color: transparent;
 }
