@@ -148,3 +148,18 @@ header {
     width: 50%;
     height: 50%;
 }
+
+.bookmark{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 10%;
+}
+
+#savePlace{
+    width: 100%;
+}
+
+/* #test{
+    width: 40%;
+} */

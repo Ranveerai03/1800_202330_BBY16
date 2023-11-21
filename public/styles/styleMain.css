@@ -135,7 +135,7 @@ h1.temp{
     width: 96%;
     /* border: 1px solid black; */
     display: flex;
-    margin: 5% auto 0px auto;
+    margin: 2% auto -10px auto;
 
     /* background-color: #FFFFFF; */
 }
@@ -149,21 +149,12 @@ h1.temp{
     height: 20vh;
     width: 96%;
     border-radius: 55px;
-    margin: 2% auto 3% 0px;
+    margin: 2% auto 0`% 0px;
 
     background-color: #FFFFFF;
 
 }
 .card3{
-    height: 20vh;
-    width: 96%;
-    border-radius: 55px;
-    margin-right: auto;
-
-    background-color: #FFFFFF;
-
-}
-.card4{
     height: 20vh;
     width: 96%;
     border-radius: 55px;
