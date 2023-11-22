@@ -41,7 +41,6 @@ if (province) {
 // code for populating the reviews onto the page - TO BE UPDATED
 
 function populateReviews() {
-  // let cardTemplate = document.getElementById("hikeCardTemplate"); // Retrieve the HTML element with the ID "hikeCardTemplate" and store it in the cardTemplate variable. 
   let reviewCardTemplate = document.getElementById("card-template");
   let reviewCardGroup = document.getElementById("reviewCardGroup");
 
@@ -72,9 +71,9 @@ function populateReviews() {
         // newcard.querySelector('i').onclick = () => saveBookmark(docID);
 
         let reviewCard = reviewCardTemplate.content.cloneNode(true);
-        reviewCard.querySelector(".condition").innerHTML = condition;
+        reviewCard.querySelector(".condition").innerHTML = `Condition: <b>${condition}</b>`;
         reviewCard.querySelector(".time").innerHTML = new Date(
-          time
+          time 
         ).toLocaleString();
         reviewCard.querySelector(".icy").innerHTML = `Icy: ${icy}`;
         reviewCard.querySelector(".comment").innerHTML = `Comments: ${comment}`;
