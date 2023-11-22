@@ -2,9 +2,6 @@ html, body {
     height: 100%; 
     margin: 0;
 }
-button:hover {
-    cursor: pointer;
-  }  
 
 .container {
     display:flex;
@@ -19,6 +16,18 @@ header {
     width: 100%;
     background: #E8E9EC;
     padding-top: 10px;
+}
+
+#add{
+
+    border-radius: 25px;
+    padding: 20px;
+    min-width: auto;
+    height: auto; 
+    margin: 20px;
+    background-color: #081335;
+    color: white;
+    text-align: center;
 }
 
 .cards {
@@ -45,12 +54,7 @@ header {
     font-size: 14pt;
 }
 
-#add {
-    /* background-color: #8cc2e3; */
-    background-color: #081335;
-    color: white;
-    text-align: center;
-}
+
 .bottomNav{
     height: 10vh;
     flex: 1 100%;
@@ -88,6 +92,9 @@ header {
 .plusIcon{
     width: 50%;
     height: 50%;
+}
+#add{
+    cursor: pointer;
 }
 
 

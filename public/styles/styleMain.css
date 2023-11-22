@@ -4,6 +4,10 @@
     padding: 0px;
 }
 
+body{
+    width: 100vw;
+    height: 100vh;
+}
 .wrapper{
     overflow: hidden;
     background-color: #E8E9EC;
@@ -12,18 +16,21 @@
 .container{
     overflow-x: hidden;
     display: flex;
-    width: 100vw;
+    width: calc(100vw - 20px);
     height: 100vh;
     flex-wrap: wrap;
     margin: 10px 10px;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
 
 }
 .mainCard{
     height: 40vh;
     width: 96%;
-    margin-right: auto;
+    /* margin-right: auto; */
     
-    align-self: flex-start;
+    /* align-self: flex-start; */
     background-color: #8CC2E3;
     border-radius: 55px;
 
@@ -147,21 +154,25 @@ h1.temp{
 }
 .card2{
     height: 20vh;
-    width: 96%;
+    width: 90%;
     border-radius: 55px;
-    margin: 2% auto 0`% 0px;
+    margin: 2% 0px 0px 0px;
 
     background-color: #FFFFFF;
 
 }
 .card3{
     height: 20vh;
-    width: 96%;
+    width: 90%;
     border-radius: 55px;
-    margin-right: auto;
-
+    margin: 2% 0px 0px 0px;
+    border: 8px solid #081335;
     background-color: #FFFFFF;
 
+}
+
+#map{
+    border: 8px solid #081335;
 }
 
 .bottomNav{
