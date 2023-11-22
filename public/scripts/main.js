@@ -8,10 +8,13 @@ document.getElementById("plusBtn").onclick = function(){
     location.href = "../../app/html/plus.html"
 }
 document.getElementById("searchBtn").onclick = function(){
-    location.href = "../../app/html/search.html"
+    location.href = "../../app/html/map.html"
 }
 document.getElementById("profileBtn").onclick = function(){
     location.href = "../../app/html/profile.html"
+}
+document.getElementById("add").onclick = function(){
+    location.href = "../../app/html/map.html"
 }
 
 

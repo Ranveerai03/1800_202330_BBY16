@@ -1,78 +1,89 @@
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3BhbmczMSIsImEiOiJjbG90YmNvaGIwNzl1MmttbXE3OXZrcXhjIn0.0YNHOnKn9XhDmxrzmzVrjA';
+const map = new mapboxgl.Map({
+  container: 'map', // container ID
+  // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+  style: 'mapbox://styles/mapbox/streets-v12', // style URL
+  center: [-123.000956, 49.249599], // starting position [lng, lat]
+  zoom: 9 // starting zoom
+});
 
-// write hikes function for testing
-function writeHikes() {
-  //define a variable for the collection you want to create in Firestore to populate data
-  var hikesRef = db.collection("hikes");
+// const locations = [
+//     {
+//         name: 'BCIT',
+//         // color: '#8cc2e3',
+//         lngLat: [-123.000956, 49.249599]
+//     },
+//     {
+//         name: 'Metropolis at Metrotown',
+//         // color: '#8cc2e3',
+//         lngLat: [-122.999604, 49.226637]
+//     }
+// ]
 
-  hikesRef.add({
-    code: "BBY01",
-    name: "Burnaby Lake Park Trail", //replace with your own city?
-    city: "Burnaby",
-    province: "BC",
-    level: "easy",
-    details: "A lovely place for lunch walk",
-    length: 10,          //number value
-    hike_time: 60,       //number value
-    lat: 49.2467097082573,
-    lng: -122.9187029619698,
-    last_updated: firebase.firestore.FieldValue.serverTimestamp()  //current system time
-  });
-  hikesRef.add({
-    code: "AM01",
-    name: "Buntzen Lake Trail", //replace with your own city?
-    city: "Anmore",
-    province: "BC",
-    level: "moderate",
-    details: "Close to town, and relaxing",
-    length: 10.5,      //number value
-    hike_time: 80,     //number value
-    lat: 49.3399431028579,
-    lng: -122.85908496766939,
-    last_updated: firebase.firestore.Timestamp.fromDate(new Date("March 10, 2022"))
-  });
-  hikesRef.add({
-    code: "NV01",
-    name: "Mount Seymour Trail", //replace with your own city?
-    city: "North Vancouver",
-    province: "BC",
-    level: "hard",
-    details: "Amazing ski slope views",
-    length: 8.2,        //number value
-    hike_time: 120,     //number value
-    lat: 49.38847101455571,
-    lng: -122.94092543551031,
-    last_updated: firebase.firestore.Timestamp.fromDate(new Date("January 1, 2023"))
-  });
-}
+// locations.forEach(({ name, lngLat }) => {
+//     // create the popup
+//     const popup = new mapboxgl.Popup({ offset: 25 }).setText(name);
+//     // Create a default Marker and add it to the map.
+//     const marker = new mapboxgl.Marker({
+//         color: '#8cc2e3',
+//         scale: 1
+//     })
+//         .setLngLat(lngLat) //lng, lat
+//         .setPopup(popup) // sets a popup on this marker
+//         .addTo(map);
+
+// })
+
+// // create the popup
+// const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+//     'Construction on the Washington Monument began in 1848.'
+// );
+
+// // Create a default Marker and add it to the map.
+// // adding marker to Deer Lake Park
+// const marker1 = new mapboxgl.Marker({
+//     color: '#8cc2e3',
+//     scale: 0.6
+// })
+//     .setLngLat([-122.975721, 49.235198]) //lng, lat
+//     .setPopup(popup) // sets a popup on this marker
+//     .addTo(map);
+
+// map.on('load', () => {
+//     map.setFog({});
+// })
 
 function showMap() {
-  //-----------------------------------------
-  // Define and initialize basic mapbox data
-  //-----------------------------------------
-  mapboxgl.accessToken = 'pk.eyJ1IjoiYWRhbWNoZW4zIiwiYSI6ImNsMGZyNWRtZzB2angzanBjcHVkNTQ2YncifQ.fTdfEXaQ70WoIFLZ2QaRmQ';
-  const map = new mapboxgl.Map({
-    container: 'map', // Container ID
-    style: 'mapbox://styles/mapbox/streets-v12', // Styling URL
-    center: [-122.964274, 49.236082], // Starting position
-    zoom: 8 // Starting zoom
-  });
-
-  // Add the control to the map.
-  map.addControl(
-    new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken,
-      mapboxgl: mapboxgl
-    })
-  );
-
-  // Add user controls to map
-  map.addControl(new mapboxgl.NavigationControl());
 
   //------------------------------------
   // Listen for when map finishes loading
   // then Add map features 
   //------------------------------------
   map.on('load', () => {
+
+    // Add the control to the map.
+    map.addControl(
+      new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken,
+        mapboxgl: mapboxgl
+      })
+    );
+
+    // Add geolocate control to the map.
+    map.addControl(
+      new mapboxgl.GeolocateControl({
+        positionOptions: {
+          enableHighAccuracy: true
+        },
+        // When active the map will receive updates to the device's location as it changes.
+        trackUserLocation: true,
+        // Draw an arrow next to the location dot to indicate which direction the device is heading.
+        showUserHeading: true
+      })
+    );
+
+    // Add user controls to map
+    map.addControl(new mapboxgl.NavigationControl());
 
     // Defines map pin icon for events
     map.loadImage(
@@ -83,11 +94,11 @@ function showMap() {
         // Add the image to the map style.
         map.addImage('eventpin', image); // Pin Icon
 
-        // READING information from "hikes" collection in Firestore
-        db.collection('hikes').get().then(allHikes => {
+        // READING information from "searches" collection in Firestore
+        db.collection('searches').get().then(allSearches => {
           const features = []; // Defines an empty array for information to be added to
 
-          allHikes.forEach(doc => {
+          allSearches.forEach(doc => {
             lat = doc.data().lat;
             lng = doc.data().lng;
             console.log(lat, lng);
@@ -104,7 +115,9 @@ function showMap() {
             features.push({
               'type': 'Feature',
               'properties': {
-                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> <a href="/hike.html?id=${doc.id}" target="_blank" title="Opens in a new window">Read more</a>`
+                'description': `<strong>${event_name}</strong><p>${preview}</p> <br> 
+                <a href="locationReviews.html?id=${doc.id}&locationName=${event_name}&city=${doc.data().city}&province=${doc.data().province}" 
+                title="Get info about location">Read more</a>`
               },
               'geometry': {
                 'type': 'Point',
@@ -138,7 +151,7 @@ function showMap() {
 
           //-----------------------------------------------------------------------
           // Add Click event listener, and handler function that creates a popup
-          // that displays info from "hikes" collection in Firestore
+          // that displays info from "searches" collection in Firestore
           //-----------------------------------------------------------------------
           map.on('click', 'places', (e) => {
             // Extract coordinates array.
@@ -173,78 +186,77 @@ function showMap() {
       }
     );
 
-    // Add the image to the map style.
-    map.loadImage(
-      'https://cdn-icons-png.flaticon.com/512/61/61168.png',
-      (error, image) => {
-        if (error) throw error;
+    // // Add the image to the map style.
+    // map.loadImage(
+    //     'https://cdn-icons-png.flaticon.com/512/61/61168.png',
+    //     (error, image) => {
+    //         if (error) throw error;
 
-        // Add the image to the map style with width and height values
-        map.addImage('userpin', image, { width: 10, height: 10 });
+    //         // // Add the image to the map style with width and height values
+    //         // map.addImage('userpin', image, { width: 10, height: 10 });
 
-        // Adds user's current location as a source to the map
-        navigator.geolocation.getCurrentPosition(position => {
-          const userLocation = [position.coords.longitude, position.coords.latitude];
-          console.log(userLocation);
-          if (userLocation) {
-            map.addSource('userLocation', {
-              'type': 'geojson',
-              'data': {
-                'type': 'FeatureCollection',
-                'features': [{
-                  'type': 'Feature',
-                  'geometry': {
-                    'type': 'Point',
-                    'coordinates': userLocation
-                  },
-                  'properties': {
-                    'description': 'Your location'
-                  }
-                }]
-              }
-            });
+    //         // Adds user's current location as a source to the map
+    //         navigator.geolocation.getCurrentPosition(position => {
+    //             const userLocation = [position.coords.longitude, position.coords.latitude];
+    //             console.log(userLocation);
+    //             if (userLocation) {
+    //                 map.addSource('userLocation', {
+    //                     'type': 'geojson',
+    //                     'data': {
+    //                         'type': 'FeatureCollection',
+    //                         'features': [{
+    //                             'type': 'Feature',
+    //                             'geometry': {
+    //                                 'type': 'Point',
+    //                                 'coordinates': userLocation
+    //                             },
+    //                             'properties': {
+    //                                 'description': 'Your location'
+    //                             }
+    //                         }]
+    //                     }
+    //                 });
 
-            // Creates a layer above the map displaying the user's location
-            map.addLayer({
-              'id': 'userLocation',
-              'type': 'symbol',
-              'source': 'userLocation',
-              'layout': {
-                'icon-image': 'userpin', // Pin Icon
-                'icon-size': 0.05, // Pin Size
-                'icon-allow-overlap': true // Allows icons to overlap
-              }
-            });
+    //                 // Creates a layer above the map displaying the user's location
+    //                 map.addLayer({
+    //                     'id': 'userLocation',
+    //                     'type': 'symbol',
+    //                     'source': 'userLocation',
+    //                     'layout': {
+    //                         'icon-image': 'userpin', // Pin Icon
+    //                         'icon-size': 0.05, // Pin Size
+    //                         'icon-allow-overlap': true // Allows icons to overlap
+    //                     }
+    //                 });
 
-            // Map On Click function that creates a popup displaying the user's location
-            map.on('click', 'userLocation', (e) => {
-              // Copy coordinates array.
-              const coordinates = e.features[0].geometry.coordinates.slice();
-              const description = e.features[0].properties.description;
+    //                 // Map On Click function that creates a popup displaying the user's location
+    //                 map.on('click', 'userLocation', (e) => {
+    //                     // Copy coordinates array.
+    //                     const coordinates = e.features[0].geometry.coordinates.slice();
+    //                     const description = e.features[0].properties.description;
 
-              new mapboxgl.Popup()
-                .setLngLat(coordinates)
-                .setHTML(description)
-                .addTo(map);
-            });
+    //                     new mapboxgl.Popup()
+    //                         .setLngLat(coordinates)
+    //                         .setHTML(description)
+    //                         .addTo(map);
+    //                 });
 
-            // Change the cursor to a pointer when the mouse is over the userLocation layer.
-            map.on('mouseenter', 'userLocation', () => {
-              map.getCanvas().style.cursor = 'pointer';
-            });
+    //                 // Change the cursor to a pointer when the mouse is over the userLocation layer.
+    //                 map.on('mouseenter', 'userLocation', () => {
+    //                     map.getCanvas().style.cursor = 'pointer';
+    //                 });
 
-            // Defaults
-            // Defaults cursor when not hovering over the userLocation layer
-            map.on('mouseleave', 'userLocation', () => {
-              map.getCanvas().style.cursor = '';
-            });
-          }
-        });
-      }
-    );
+    //                 // Defaults
+    //                 // Defaults cursor when not hovering over the userLocation layer
+    //                 map.on('mouseleave', 'userLocation', () => {
+    //                     map.getCanvas().style.cursor = '';
+    //                 });
+    //             }
+    //         });
+    //     }
+    // );
   });
 }
 
 // Call the function to display the map with the user's location and event pins
 showMap();
-

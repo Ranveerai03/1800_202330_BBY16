@@ -1,48 +1,64 @@
-body { margin: 0; padding: 0; }
-
-#map { 
-    /* position: absolute; 
-    top: 0; 
-    bottom: 0;  */
-    width: 100%; 
-    height: 90vh;
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 16pt;
 }
 
-.bottomNav{
+.container {
+    height:90vh;
+}
+
+.wrapper {
+    background-color: #E8E9EC;
+    margin: 0;
+}
+
+.btn{
+    background-color: #081335;
+    border: none;
+    font-size: 20px;
+    border: 8px;
+    color:aliceblue;
+}
+
+.bottomNav {
     height: 10vh;
     flex: 1 100%;
     background-color: #FFFFFF;
     border-radius: 20px 20px 0px 0px;
     border-top: 1px solid black;
     position: sticky;
-    bottom: 0px;
+    bottom: 0;
     display: flex;
     justify-content: space-around;
 }
-.icons{
+
+.icons {
     /* border: 1px solid red; */
     align-self: center;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
-
 }
-.innerIcon{
+
+.innerIcon {
     /* border: 1px solid green; */
     width: 35%;
     height: 35%;
     align-self: center;
 
 }
-.middleIcon{
+
+.middleIcon {
     background-color: #081335;
     border-radius: 20px;
     width: 85%;
     height: 85%;
     margin-bottom: 12%;
 }
-.plusIcon{
+
+.plusIcon {
     width: 50%;
     height: 50%;
 }
