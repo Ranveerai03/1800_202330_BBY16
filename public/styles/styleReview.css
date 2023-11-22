@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
-html, body {
+body {
     height: 100%;
     margin: 0;
     padding: 0%;
@@ -8,22 +8,22 @@ html, body {
 
 }
 
-
 .wrapper {
     overflow: hidden;
     background-color: #E8E9EC;
-    padding-bottom: 0%;
-    padding-top: 0%;
 }
 
 .container {
+    margin: 10px 10px;
+    align-items: center;
     overflow-x: hidden;
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
-    height: 100vh;
-    margin: 10px 10px;
+    flex-direction: column;
+    width: calc(100vw-20px);
+    height: 88vh;
 }
+
 
 textarea {
     font-family: 'Open Sans Light', sans-serif;
@@ -50,6 +50,59 @@ button {
     border-radius: 55px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
+
+.locationCard{
+    display: flex;
+    height: 8vh;
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding: 3px;
+    background-color: #FFFFFF;
+    border-radius: 55px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.dropbtn {
+    background-color: #8CC2E3;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+.dropdown {
+position: relative;
+display: inline-block;
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+    
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #081335;}
 
 .textbox {
     display: flex;
