@@ -131,15 +131,18 @@ header {
 .innerIcon {
     /* border: 1px solid green; */
     width: 35%;
+    /* fixed width for icons */
+    width: 32px;
     height: 35%;
     align-self: center;
-
 }
 
 .middleIcon {
     background-color: #081335;
     border-radius: 20px;
     width: 85%;
+    /* fixed width for icons */
+    width: 400px;
     height: 85%;
     margin-bottom: 12%;
 }
