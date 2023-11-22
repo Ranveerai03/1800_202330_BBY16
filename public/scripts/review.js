@@ -12,10 +12,6 @@ document.getElementById("searchBtn").onclick = function(){
 }
 document.getElementById("profileBtn").onclick = function(){
     location.href = "../../app/html/profile.html"
-<<<<<<< HEAD
-}
-=======
 }
 
 
->>>>>>> 80eaf0040327b7597c11c32cadf3af639ce1196c
