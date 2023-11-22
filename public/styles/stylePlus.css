@@ -3,13 +3,29 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0%;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans Light', sans-serif;
 
 }
 
     .wrapper {
         overflow: hidden;
         background-color: #E8E9EC;
+    }
+
+    .snowGo {
+        display: flex;
+        height: 8vh;
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 0%;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        font-size: 20px;
+        background-color: #8CC2E3;
+        border-radius: 55px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
     }
     
     .container {
@@ -21,21 +37,6 @@ html, body {
         margin: 10px 10px;
     }
 
-    .titleCard{
-        display: flex;
-        height: 30vh;
-        width: 100%;
-        margin-right: auto;
-        margin-left: auto;
-        justify-content: center;
-        align-items: center;
-        padding: 5px;
-        font-size: 20px;
-        background-color: #8CC2E3;
-        border-radius: 55px;
-        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    }
-
     .backIcon {
         display: flex;
         height: 50%;
@@ -43,15 +44,13 @@ html, body {
     }   
     
     .optionCards{
-        margin-top: 0%;
-        margin-bottom: 0%;
         font-size: 80%;
     }
 
     .back {
         width: 10%;
         height: 10%;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
     }
 
 
@@ -63,7 +62,21 @@ html, body {
         justify-content: center;
         margin-top: 50px;
         margin-bottom: 20px;
-        padding: 10px;
+        padding: 3px;
+        background-color: #FFFFFF;
+        border-radius: 55px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+
+    .writeCard{
+        display: flex;
+        height: 8vh;
+        width: 100%;
+        align-self: center;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 3px;
         background-color: #FFFFFF;
         border-radius: 55px;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -75,8 +88,9 @@ html, body {
         width: 100%;
         align-self: center;
         justify-content: center;
+        margin-top: 20px;
         margin-bottom: 20px;
-        padding: 10px;
+        padding: 3px;
         background-color: #FFFFFF;
         border-radius: 55px;
         box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
@@ -90,8 +104,9 @@ html, body {
         border-radius: 55px;
     }
 
-    .mypic-input {
-
+    .dropdown {
+        display: inline-block;
+        position: relative;
     }
 
     .bottomNav{
@@ -133,3 +148,40 @@ html, body {
         height: 50%;
     }
     
+    .dropbtn {
+        background-color: #8CC2E3;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+      }
+    
+    .dropdown {
+    position: relative;
+    display: inline-block;
+    }
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      /* Links inside the dropdown */
+      .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {display: block;}
+    
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {background-color: #081335;}

@@ -1,6 +1,3 @@
-document.getElementById("backIcon").onclick = function(){
-    location.href = "../../app/html/main.html"
-}
 document.getElementById("homeBtn").onclick = function(){
     location.href = "../../app/html/main.html"
 }
@@ -8,7 +5,7 @@ document.getElementById("bookmarkBtn").onclick = function(){
     location.href = "../../app/html/saved.html"
 }
 document.getElementById("plusBtn").onclick = function(){
-    location.href = "../../app/html/picture.html"
+    location.href = "../../app/html/plus.html"
 }
 document.getElementById("searchBtn").onclick = function(){
     location.href = "../../app/html/search.html"
@@ -16,7 +13,30 @@ document.getElementById("searchBtn").onclick = function(){
 document.getElementById("profileBtn").onclick = function(){
     location.href = "../../app/html/profile.html"
 }
+document.getElementById("backButton").onclick = function(){
+    location.href = "../../app/html/main.html"
+}
 
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown menu if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  
 function savePost() {
     alert ("SAVE POST is triggered");
     firebase.auth().onAuthStateChanged(function (user) {

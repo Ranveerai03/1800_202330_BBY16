@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Review</title>
+    <link rel="stylesheet" href="../../public/styles/styleReview.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="review">
+                <h2>Write a review below:</h2>
+            </div>
+
+        <div class="textbox">
+            <textarea id="description" rows="4" cols="50"></textarea>
+        </div>
+
+            <div class="check">
+                <input type="checkbox" id="snow" name="snow" value="snow">
+                <label for="snow">Snow delays</label><br>
+                <input type="checkbox" id="ice" name="ice" value="ice">
+                <label for="snow">Icy Road</label><br>
+                <input type="checkbox" id="traffic" name="traffic" value="traffic">
+                <label for="traffic">Heavy Traffic</label>
+            </div>
+        </div>
+
+        <a href="thanks.html">
+            <button type="button" class="btn btn-info" id="savePostBtn onclick="savePost()">Save</button>
+        </a>
+        
+        </div>
+    </div>
+
+    <div class="bottomNav">
+        <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
+        <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+        <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png"></div>
+        <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+        <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+    </div>
+
+
+</body>

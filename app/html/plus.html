@@ -11,12 +11,13 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <div class="titleCard">
-                <h1>Add a Review</h1>
-            </div>
+            <div class="snowGo">
+                <h1>SnowGo</h1>
+            </div> 
             
             <div class="back">
-                <img src="../../public/images/backButton.png" class="backIcon"></div>
+                <a href="../html/main.html"><img src="../../public/images/backButton.png" class="backIcon"></a>
+            </div>
 
             <div class="optionCards">
                 <div class="locationCard">
@@ -24,28 +25,26 @@
                 </div>
 
                 <div class="imageCard">
-                    <h1>Take a camera photo</h1>
+                    <h1>Upload a photo</h1>
                     <div class="cameraIcon"><img src="../../public/images/cameraIcon.png"/></div>
                 </div>
                 <input type="file" id="mypic-input" accept="image/*" />
                 <img id="mypic-goes-here"/>
-            </div>
 
-            <div class="review">
-                <h2>Write a review below:</h2>
-                <textarea id="description" rows="4" cols="50"></textarea>
+                <div class="writeCard">
+                    <a href="../html/review.html"><h1>Write a review</h1></a>
+                </div>
             </div>
-
-            <button type="button" class="btn btn-info" onclick="savePost()">Post Review Now</button>
         </div>
     </div>
 
     <div class="bottomNav">
-        <div class="icons"><img class="innerIcon" src="../../public/images/home.png"></div>
-        <div class="icons"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
-        <div class="icons middleIcon"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png"></div>
-        <div class="icons"><img class="innerIcon" src="../../public/images/loupe.png"></div>
-        <div class="icons"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
-    </div>
+      <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
+      <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+      <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png"></div>
+      <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+      <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+  </div>
     <script src="../../public/scripts/plus.js"></script>
+    <script src="../../public/scripts/main.js"></script>
 </body>
