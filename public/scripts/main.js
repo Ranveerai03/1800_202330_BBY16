@@ -5,7 +5,7 @@ document.getElementById("bookmarkBtn").onclick = function(){
     location.href = "../../app/html/saved.html"
 }
 document.getElementById("plusBtn").onclick = function(){
-    location.href = "../../app/html/picture.html"
+    location.href = "../../app/html/plus.html"
 }
 document.getElementById("searchBtn").onclick = function(){
     location.href = "../../app/html/search.html"
