@@ -101,7 +101,6 @@ function showMap() {
           allSearches.forEach(doc => {
             lat = doc.data().lat;
             lng = doc.data().lng;
-            console.log(doc);
             console.log(lat, lng);
             coordinates = [lng, lat];
             console.log(coordinates);
@@ -258,6 +257,133 @@ function showMap() {
     // );
   });
 }
+
+
+
+
+// Fetch road closure data
+function fetchRoadClosures() {
+  return fetch('https://opendata.vancouver.ca/api/explore/v2.1/catalog/datasets/road-ahead-current-road-closures/records?limit=20&refine=comp_date%3A%222023%2F12%22')
+    .then(response => response.json())
+    .then(data => data.results)
+    .catch(error => console.error('Error fetching road closures:', error));
+}
+
+// Process road closure data
+function createRoadClosureFeatures(roadClosures) {
+  return roadClosures.map(closure => ({
+    'type': 'Feature',
+    'geometry': closure.geom.geometry, // Adjust based on your data structure
+    'properties': {
+      'project': closure.project || 'N/A',
+      'location': closure.location || 'N/A',
+      'comp_date': new Date(closure.comp_date).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) || 'N/A',
+      'url_link': closure.url_link || '#'
+    }
+  }));
+}
+
+
+//------------------------------------
+// Listen for when map finishes loading
+// then Add map features 
+//------------------------------------
+map.on('load', () => {
+
+  // // Load the hammer image
+  // map.loadImage('../images/hammer.png', (error, image) => {
+  //   if (error) throw error;
+
+  //   // Add the image to the map style
+  //   map.addImage('hammer-icon', image);
+  // });
+
+  // Fetch and process road closure data, then add it to the map
+  fetchRoadClosures().then(roadClosures => {
+    const roadClosureFeatures = createRoadClosureFeatures(roadClosures);
+
+    // Add the road closure data as a source
+    map.addSource('road-closures', {
+      'type': 'geojson',
+      'data': {
+        'type': 'FeatureCollection',
+        'features': roadClosureFeatures
+      }
+    });
+
+    // Add a layer to display the road closures using red lines
+    map.addLayer({
+      'id': 'road-closures-layer',
+      'type': 'line', // Use 'line' for LineString geometries
+      'source': 'road-closures',
+      'layout': {
+        'line-cap': 'round',
+        'line-join': 'round'
+      },
+      'paint': {
+        'line-color': '#ff0000', // Choose a color that stands out
+        'line-width': 6
+      }  
+    });
+
+    // // Add a layer to display the road closures using hammer icon
+    // map.addLayer({
+    //   'id': 'road-closures-layer',
+    //   'type': 'symbol', // Use 'symbol' for point geometries with custom icons
+    //   'source': 'road-closures',
+    //   'layout': {
+    //     'icon-image': 'hammer-icon', // Use your custom hammer icon
+    //     'icon-size': 1 // Adjust size as needed
+    //   }
+    // });
+    
+
+    //-----------------------------------------------------------------------
+    // Add Click event listener, and handler function that creates a popup
+    // that displays info from "hikes" collection in Firestore
+    //-----------------------------------------------------------------------
+    map.on('click', 'road-closures-layer', (e) => {
+      // Check if a feature was clicked
+      if (e.features.length > 0) {
+        const closure = e.features[0].properties;
+        const coordinates = e.lngLat;
+
+        // HTML content for the popup
+        const popupContent = `
+          <div>
+            <h3>Project: ${closure.project}</h3>
+            <p><strong>Location:</strong> ${closure.location}</p>
+            <p><strong>Completion Date:</strong> ${closure.comp_date}</p>
+            <p><a href="${closure.url_link}" target="_blank">More Info</a></p>
+          </div>
+        `;
+
+        // Create and show the popup
+        new mapboxgl.Popup()
+          .setLngLat(coordinates)
+          .setHTML(popupContent)
+          .addTo(map);
+      }
+  });
+
+  //-----------------------------------------------------------------------
+  // Add mousenter event listener, and handler function to 
+  // Change the cursor to a pointer when the mouse is over the road closures layer.
+  //-----------------------------------------------------------------------
+  
+  // Change the cursor to a pointer when the mouse is over the road closures layer.
+  map.on('mouseenter', 'road-closures-layer', () => {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+
+  // Defaults cursor when not hovering over the road closures layer
+  map.on('mouseleave', 'road-closures-layer', () => {
+    map.getCanvas().style.cursor = '';
+  });
+
+});
+});
+
 
 // Call the function to display the map with the user's location and event pins
 showMap();
