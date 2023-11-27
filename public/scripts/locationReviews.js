@@ -72,13 +72,11 @@ function populateReviews() {
 
         let reviewCard = reviewCardTemplate.content.cloneNode(true);
         reviewCard.querySelector(".condition").innerHTML = `Condition: <b>${condition}</b>`;
-        reviewCard.querySelector(".time").innerHTML = new Date(
-          time 
-        ).toLocaleString();
+        reviewCard.querySelector(".time").innerHTML = new Date(time).toLocaleString();
         reviewCard.querySelector(".icy").innerHTML = `Icy: ${icy}`;
         reviewCard.querySelector(".comment").innerHTML = `Comments: ${comment}`;
 
-        ``
+
 
         // Populate the star rating based on the rating value
 
@@ -181,4 +179,27 @@ console.log(locationID)
 document.querySelector('i').id = 'save-' + locationID;   //guaranteed to be unique
 document.querySelector('i').onclick = () => saveBookmark(locationID);
 // document.querySelector('i').onclick = () => console.log(locationID);
+
+
+// Function to redirect to a new URL with location info
+function redirectToNewURL() {
+  // Get the query string from the current URL
+  var queryString = window.location.search;
+
+  // Parse the query string to extract the id parameter
+  var urlParams = new URLSearchParams(queryString);
+  var id = urlParams.get('id');
+  var locationName = urlParams.get('locationName');
+  var city = urlParams.get('city');
+  var province = urlParams.get('province');
+
+  // Construct the new URL with the extracted id parameter
+  var newUrl = '../../app/html/locationPhotos.html?id=' + id + '&locationName=' + locationName + '&city=' + city + '&province=' + province;
+
+  // Redirect to the new URL on the same page
+  window.location.href = newUrl;
+}
+
+// Add event listener to the "photos" button
+document.getElementById("photos").addEventListener("click", redirectToNewURL);
 

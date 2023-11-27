@@ -24,6 +24,19 @@
     ></script> -->
 
   <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="../../public/styles/styleLocationPhotos.css" />
@@ -40,40 +53,33 @@
       <div class="name">
         <div id="name-goes-here"></div>
       </div>
+      <div class="address">
+        <span id="city-goes-here"></span>
+        <span id="province-goes-here"></span>
+      </div>
       <div class="view-option">
-        <input type="button" class="button" id="reviews" value="Reviews"/>
+        <input type="button" class="button" id="reviews" value="Reviews" />
         <div></div>
-        <input type="button" class="button" id="photos" value="Photos"/>
+        <input type="button" class="button" id="photos" value="Photos" />
       </div>
-      <div class="card">
-        <div id="reviews-go-here"></div>
-        <!-- <div class="notifications">
-          <div id="notif-header">NOTIFICATIONS</div>
-          <div id="notif1">
-            <div class="alerts">Alerts</div>
-            <div class="toggle">
-              <label class="switch">
-                <input type="checkbox">
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
+
+      <div id="images-container"></div>
+
+      <template id="card-template">
+        <div class="card">
+          <div class="photo">placeholder</div>
+          <p class="time">placeholder</p>
         </div>
-        <div class="security">
-          <div id="security-header">SECURITY</div>
-          <div id="security1">
-            <div>Change Password</div>
-            <div><img src="../../public/images/right-arrow.png" /></div>
-          </div>
-        </div> -->
-      </div>
+      </template>
     </div>
-    <div class="bottomNav">
-      <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
-      <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
-      <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png"></div>
-      <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
-      <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+  </div>
+  <div class="bottomNav">
+    <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
+    <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+    <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png">
+    </div>
+    <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+    <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
   </div>
   </div>
 
@@ -83,8 +89,10 @@
 
   <!-- Link to scripts of your own -->
   <!-- <script src="./scripts/script.js"></script> -->
+  <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+  <script src="../../public/scripts/locationPhotos.js"></script>
   <script src="../../public/scripts/main.js"></script>
-  <script src="../../public/scripts/main.js"></script>
+  <script src="../../public/scripts/saved.js"></script>
 
 </body>
 
