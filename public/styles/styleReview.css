@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
-body {
+body, html {
     height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0%;
     font-family: 'Open Sans Light', sans-serif;
@@ -36,10 +37,15 @@ button {
     font-size: 14px;
 }
 
+.textbox{
+    display: flex;
+    flex-direction: column;
+}
+
 .review {
     display: flex;
     height: 10vh;
-    width: 100%;
+    width: 94%;
     margin-right: auto;
     margin-left: auto;
     justify-content: center;
@@ -48,34 +54,29 @@ button {
     font-size: 20px;
     background-color: #8CC2E3;
     border-radius: 55px;
+    border: 2px solid black;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .locationCard{
     display: flex;
     height: 8vh;
-    width: 100%;
+    width: 95%;
     align-self: center;
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 20px;
+    font-size: 30px;
     padding: 3px;
     background-color: #FFFFFF;
     border-radius: 55px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-.dropbtn {
-    background-color: #8CC2E3;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-
 .dropdown {
 position: relative;
 display: inline-block;
+margin-bottom: 20px;
 }
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -86,6 +87,10 @@ display: inline-block;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
   }
+
+h1 {
+    font-size: 18px;
+}
   
   /* Links inside the dropdown */
   .dropdown-content a {
