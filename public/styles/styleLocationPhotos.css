@@ -8,6 +8,7 @@
 body,
 html {
     height: 100%;
+    overflow-x: hidden;
 }
 
 .wrapper {
@@ -155,7 +156,7 @@ header {
     /* fixed width for icons */
     width: 400px;
     height: 85%;
-    margin-bottom: 12%;
+    margin-bottom: 6vh;
 }
 
 .plusIcon {
