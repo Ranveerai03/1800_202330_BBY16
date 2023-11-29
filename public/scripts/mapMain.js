@@ -1,6 +1,6 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiY3BhbmczMSIsImEiOiJjbG90YmNvaGIwNzl1MmttbXE3OXZrcXhjIn0.0YNHOnKn9XhDmxrzmzVrjA';
 const map = new mapboxgl.Map({
-  container: 'map', // container ID
+  container: 'mapHP', // container ID
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   style: 'mapbox://styles/mapbox/streets-v12', // style URL
   center: [-123.000956, 49.249599], // starting position [lng, lat]
@@ -101,10 +101,10 @@ function showMap() {
           allSearches.forEach(doc => {
             lat = doc.data().lat;
             lng = doc.data().lng;
-            console.log(doc);
-            console.log(lat, lng);
+            // console.log(doc);
+            // console.log(lat, lng);
             coordinates = [lng, lat];
-            console.log(coordinates);
+            // console.log(coordinates);
             // Coordinates
             event_name = doc.data().name; // Event Name
             preview = doc.data().details; // Text Preview

@@ -73,6 +73,7 @@ header {
     bottom: 0px;
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
 }
 .icons{
     /* border: 1px solid red; */
