@@ -170,20 +170,23 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-
-#security-header {
-    padding: 10px;
+.weather {
+    /* background-color:#8cc2e3; */
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    margin: 20px 50px;
+    margin: 20px 50px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
-#security1 {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#security1 img {
-    width: 20px;
+.mainCard {
+    /* background-color:#8cc2e3; */
+    background-color: #FFFFFF;
+    border-radius: 35px;
+    margin: 20px 50px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .bottomNav {
@@ -196,6 +199,7 @@ input:checked+.slider:before {
     bottom: 0;
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
 }
 
 .icons {

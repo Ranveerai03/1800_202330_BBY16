@@ -24,7 +24,25 @@ html {
     flex-direction: column;
 }
 
-header {
+.title{
+    /* border: 1px solid red; */
+    /* border-radius: 25px; */
+    width: calc(100% - 32px);
+    height: auto;
+    align-self: center;
+    text-align: center;
+    font-size: 24pt;
+    font-weight: 900;
+
+    padding: 16px;
+    background-color: rgb(204, 206, 217);
+
+    border-radius: 0px 0px 20px 20px;
+
+    
+}
+
+/* header {
     font-size: 20pt;
     display: flex;
     flex-direction: row;
@@ -34,7 +52,7 @@ header {
     padding: 0;
     padding-top: 10px;
     padding-bottom: 10px;
-}
+} */
 
 .view-option {
     display: grid;
@@ -172,7 +190,39 @@ header {
 #savePlace {
     width: 100%;
 }
-
 .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+
     cursor: pointer;
+  }
+
+  .material-icons.md-48 { font-size: 48px; }
+
+.savedBookmark{
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    height: auto;
+    /* border: 1px solid red; */
 }

@@ -8,49 +8,63 @@ html, body {
     flex-wrap: wrap;
     flex-direction: column;
     min-height: 100vh;
+    overflow-y: scroll;
 }
 
-header {
-    font-size: 20pt;
+.title{
+    /* border: 1px solid red; */
+    /* border-radius: 25px; */
+    width: calc(100% - 32px);
+    height: auto;
+    align-self: center;
     text-align: center;
-    width: 100%;
-    background: #E8E9EC;
-    padding-top: 10px;
-}
+    font-size: 24pt;
+    font-weight: 900;
 
+    padding: 16px;
+    background-color: rgb(204, 206, 217);
+
+    border-radius: 0px 0px 20px 20px;
+}
 #add{
     border-radius: 25px;
     padding: 20px;
     min-width: auto;
     height: auto; 
     margin: 20px;
+    margin-bottom: 10px;
     background-color: #081335;
     color: white;
     text-align: center;
 }
 
 .cards {
-    background: #E8E9EC;
     flex: 1;
 }
 
-.cards div {
+.card-body {
     border-radius: 25px;
-    padding: 20px;
+    padding: 1% 20px;
     min-width: auto;
     height: auto; 
     margin: 20px;
-    background-color: #FFFF;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    background-color: #FFFFFF;
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.48);
 
 }
-
-.route-name {
+.card-title{
+    font-size: 20pt;
+    font-weight: 900;
+    /* border:1px solid red; */
+}
+.card-city{
     font-size: 18pt;
+    font-weight: 550;
+    /* border: 1px solid green; */
 }
-
-.route-description {
+.route-timestamp{
     font-size: 14pt;
+    font-weight: 400;
 }
 
 
@@ -64,6 +78,7 @@ header {
     bottom: 0px;
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
 }
 .icons{
     /* border: 1px solid red; */
@@ -95,6 +110,10 @@ header {
 #add{
     cursor: pointer;
 }
+a {
+    all: unset;
+}
+
 
 
 
