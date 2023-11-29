@@ -2,15 +2,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
-  <link rel="stylesheet" href="../../public/styles/styleprofile.css">
+  <link rel="stylesheet" href="../../public/styles/styleprofile.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <!-- This line is important -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 </head>
 
 <body>
@@ -19,7 +21,8 @@
       <header>Profile</header>
       <div class="profile-card">
         <div class="profile-img">
-          <img src="../../public/images/profile-user.png">
+          <!-- Default profile image -->
+          <img id="profileImage" src="../../public/images/default_profile.png" />
         </div>
         <div class="name">
           <div id="name-goes-here"></div>
@@ -27,8 +30,10 @@
         <div class="email">
           <div id="email-goes-here"></div>
         </div>
-        <div class="logout">
-          Logout
+        <!-- Image upload input -->
+        <input type="file" id="imageUpload" accept="image/*" style="display: none" />
+        <div id="upload" onclick="document.getElementById('imageUpload').click()">
+          Upload Image
         </div>
       </div>
       <div class="settings-card">
@@ -38,7 +43,7 @@
             <div class="alerts">Alerts</div>
             <div class="toggle">
               <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" />
                 <span class="slider round"></span>
               </label>
             </div>
@@ -50,22 +55,49 @@
             <div>Change Password</div>
             <div><img src="../../public/images/right-arrow.png" /></div>
           </div>
+          <div id="aboutus">About Us</div>
+          <div id="settings">Settings</div>
+          <div class="logout" id="logout">Logout</div>
         </div>
       </div>
     </div>
     <div class="bottomNav">
-      <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
-      <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
-      <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon"
-          src="../../public/images/whitePlus.png"></div>
-      <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
-      <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+      <div class="icons" id="homeBtn">
+        <img class="innerIcon" src="../../public/images/home.png" />
+      </div>
+      <div class="icons" id="bookmarkBtn">
+        <img class="innerIcon" src="../../public/images/bookmark.png" />
+      </div>
+      <div class="icons middleIcon" id="plusBtn">
+        <img class="innerIcon plusIcon" src="../../public/images/whitePlus.png" />
+      </div>
+      <div class="icons" id="searchBtn">
+        <img class="innerIcon" src="../../public/images/loupe.png" />
+      </div>
+      <div class="icons" id="profileBtn">
+        <img class="innerIcon" src="../../public/images/profile-user.png" />
+      </div>
     </div>
+  </div>
+  <div class="bottomNav">
+    <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
+    <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+    <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon" src="../../public/images/whitePlus.png">
+    </div>
+    <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+    <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+  </div>
   </div>
 
   <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
   <script src="../../public/scripts/main.js"></script>
 
+</body>
+
+<script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+<script src="../../public/scripts/authentication.js"></script>
+<script src="../../public/scripts/main.js"></script>
+<script src="../../public/scripts/profile.js"></script>
 </body>
 
 </html>

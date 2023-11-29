@@ -15,8 +15,8 @@ document.getElementById("profileBtn").onclick = function(){
 }
 
 function savePost() {
-    alert ("Your post has been uploaded!");
-    location.href = "../../app/html/main.html"
+    //alert ("Your post has been uploaded!");
+    location.href = "../../app/html/thanks.html"
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.

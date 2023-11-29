@@ -1,229 +1,263 @@
 * {
-    margin: 0px;
-    padding: 0px;
-    font-size: 16pt;
+  margin: 0px;
+  padding: 0px;
+  font-size: 16pt;
 }
 
 body,
 html {
-    height: 100%;
+  height: 100%;
 }
 
 .wrapper {
-    background-color: #E8E9EC;
-    margin: 0;
+  background-color: #e8e9ec;
+  margin: 0;
 }
 
 .container {
-    display: flex;
-    width: 90vw;
-    height: 90vh;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: flex-start;
+  display: flex;
+  width: 90vw;
+  height: 90vh;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 header {
-    font-size: 20pt;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw;
-    background: #E8E9EC;
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
+  font-size: 20pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  background: #e8e9ec;
+  padding: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .profile-card {
-    /* background-color:#8cc2e3; */
-    background-color: #FFFFFF;
-    border-radius: 35px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /* background-color:#8cc2e3; */
+  background-color: #ffffff;
+  border-radius: 35px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .profile-img {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-top: 30px;
-    padding-bottom: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 15px;
 }
 
 .profile-img img {
-    width: 125px;
+  width: 125px;
 }
 
 .name {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
 }
 
 .email {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
 }
 
 .logout {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: #081335;
-    color: white;
-    padding: 15px;
-    border-radius: 25px;
-    margin-left: 120px;
-    margin-right: 120px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #081335;
+  color: white;
+  padding: 15px;
+  border-radius: 25px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /* Changes the cursor to indicate it's clickable */
+  cursor: pointer;
+}
+
+#upload {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #081335;
+  color: white;
+  padding: 15px;
+  border-radius: 25px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /* Changes the cursor to indicate it's clickable */
+  cursor: pointer;
 }
 
 .settings-card {
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border-radius: 35px;
-    margin-left: 50px;
-    margin-right: 50px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 35px;
+  margin-left: 50px;
+  margin-right: 50px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 20px;
 }
 
 #notif-header {
-    padding: 10px;
+  padding: 10px;
 }
 
 #notif1 {
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* The switch - the box around the slider */
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
 }
 
 /* Hide default HTML checkbox */
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 /* The slider */
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-input:checked+.slider {
-    background-color: #8cc2e3;
+input:checked + .slider {
+  background-color: #8cc2e3;
 }
 
-input:focus+.slider {
-    box-shadow: 0 0 1px #8cc2e3;
+input:focus + .slider {
+  box-shadow: 0 0 1px #8cc2e3;
 }
 
-input:checked+.slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 34px;
+  border-radius: 34px;
 }
 
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 #security-header {
-    padding: 10px;
+  padding: 10px;
 }
 
-#security1 {
+#aboutus {
+  padding: 10px;
+  cursor: pointer;
+}
+
+#aboutus:hover {
+  color: #081335; /* or a different color for hover state */
+}
+
+#settings {
+  padding: 10px;
+}
+
+  #security1 {
     padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-#security1 img {
+  }
+  
+  #security1 img {
     width: 20px;
-}
-
-.bottomNav {
+  }
+  
+  .bottomNav {
     height: 10vh;
     flex: 1 100%;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     border-radius: 20px 20px 0px 0px;
     border-top: 1px solid black;
     position: sticky;
     bottom: 0;
     display: flex;
     justify-content: space-around;
-}
-
-.icons {
+  }
+  
+  .icons {
     /* border: 1px solid red; */
     align-self: center;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-evenly;
-}
-
-.innerIcon {
+    /* Changes the cursor to indicate it's clickable */
+    cursor: pointer; 
+  }
+  
+  .innerIcon {
     /* border: 1px solid green; */
     width: 35%;
     height: 35%;
     align-self: center;
-
-}
-
-.middleIcon {
+  }
+  
+  .middleIcon {
     background-color: #081335;
     border-radius: 20px;
     width: 85%;
     height: 85%;
     margin-bottom: 12%;
-}
-
-.plusIcon {
+  }
+  
+  .plusIcon {
     width: 50%;
     height: 50%;
-}
+  }
+  

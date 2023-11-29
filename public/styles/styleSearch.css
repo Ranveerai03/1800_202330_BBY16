@@ -73,6 +73,7 @@ header {
     bottom: 0px;
     display: flex;
     justify-content: space-around;
+    cursor: pointer;
 }
 .icons{
     /* border: 1px solid red; */
@@ -81,7 +82,8 @@ header {
     height: 100%;
     display: flex;
     justify-content: space-evenly;
-
+    /* Changes the cursor to indicate it's clickable */
+    cursor: pointer; 
 }
 .innerIcon{
     /* border: 1px solid green; */
