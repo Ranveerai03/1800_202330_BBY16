@@ -199,7 +199,8 @@ h1.temp{
     height: 100%;
     display: flex;
     justify-content: space-evenly;
-
+    /* Changes the cursor to indicate it's clickable */
+    cursor: pointer; 
 }
 .innerIcon{
     /* border: 1px solid green; */

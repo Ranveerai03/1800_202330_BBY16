@@ -99,6 +99,8 @@
     margin-top: 10px;
     margin-bottom: 20px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    /* Changes the cursor to indicate it's clickable */
+    cursor: pointer; 
   }
   
   .settings-card {
@@ -220,6 +222,8 @@
     height: 100%;
     display: flex;
     justify-content: space-evenly;
+    /* Changes the cursor to indicate it's clickable */
+    cursor: pointer; 
   }
   
   .innerIcon {
