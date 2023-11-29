@@ -191,7 +191,20 @@
   #security-header {
     padding: 10px;
   }
-  
+
+  #aboutus {
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  #aboutus:hover {
+    color: #081335; /* or a different color for hover state */
+  }
+
+  #settings {
+    padding: 10px;
+  }
+
   #security1 {
     padding: 10px;
     display: flex;

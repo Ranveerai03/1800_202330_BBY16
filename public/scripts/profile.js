@@ -20,3 +20,6 @@
     })}
   ;
 
+  document.getElementById("aboutus").onclick = function () {
+    location.href = "../../app/html/aboutUs.html";
+  };
