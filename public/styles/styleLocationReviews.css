@@ -154,6 +154,8 @@ html {
     height: 100%;
     display: flex;
     justify-content: space-evenly;
+    /* Changes the cursor to indicate it's clickable */
+    cursor: pointer; 
 }
 
 .innerIcon {

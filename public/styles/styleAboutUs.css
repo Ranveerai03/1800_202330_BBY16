@@ -1,11 +1,47 @@
-* {
-  margin: 0px;
-  padding: 0px;
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  color: #081335;
+  font-size: 24pt;
+}
+
+p {
   font-size: 16pt;
+}
+
+header {
+  background: #081335;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.about-section,
+.team-section,
+.history-section,
+.testimonials-section {
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.team-member {
+  margin: 1rem 0;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .container {
   height: 90vh;
+  overflow-y: scroll;
 }
 
 .wrapper {
@@ -40,8 +76,7 @@
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  /* Changes the cursor to indicate it's clickable */
-  cursor: pointer; 
+  cursor: pointer; /* Changes the cursor to indicate it's clickable */
 }
 
 .innerIcon {

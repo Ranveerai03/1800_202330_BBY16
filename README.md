@@ -2,7 +2,8 @@
 
 ## 1. Project Description
 
-SnowGo is a web application to help Metro Vancouver commuters commute efficiently during the winter by uploading real road photos affected by snow and viewing these photos before you start your commute, unlike Google Maps, which only shows delays and accidents, but not the weather conditions on the roads.
+SnowGo is a web application to help Metro Vancouver commuters commute efficiently during the winter by submitting and viewing reviews on road conditions before starting their commute, unlike Google Maps, which only shows delays and accidents but not the weather conditions on the roads.
+
 
 ## 2. Names of Contributors
 
@@ -20,7 +21,9 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 - HTML, CSS, JavaScript
 - Bootstrap 5.0 (Frontend library)
 - Firebase 8.0 (BAAS - Backend as a Service)
-- ...
+- Mapbox API
+- Weather API
+- City of Vancouver Road Closure API
 
 ## 4. Complete setup/installion/usage
 

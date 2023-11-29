@@ -1,11 +1,11 @@
-*{
+* {
   padding: 0px;
   margin: 0px;
 }
-body{
+body {
   width: 100vw;
   height: 100vh;
-  background-color: #E8E9EC;
+  background-color: #e8e9ec;
 }
 .background-image {
   display: flex;
@@ -17,7 +17,7 @@ body{
   background-position: center;
   background-size: cover;
 }
-.login{
+.login {
   -webkit-backdrop-filter: blur(5px);
   position: relative;
   width: 95%;
@@ -31,7 +31,7 @@ body{
   flex-wrap: wrap;
 }
 
-.appName{
+.appName {
   flex: 1 100%;
   /* align-self: top; */
   font-size: 80px;
@@ -40,26 +40,24 @@ body{
   text-align: center;
   border-radius: 20px solid red;
 }
-.text{
+.text {
   align-self: bottom;
   border-radius: 1px solid red;
 }
 
-
 .btn {
-  color: #E8E9EC;
-  background-color:#081335;
+  color: #e8e9ec;
+  background-color: #081335;
 }
 
 .footer {
   text-align: left;
-  color:#000000;
+  color: #000000;
   padding-left: 1%;
-  font-size:18px;
+  font-size: 18px;
 }
-.lead{
+.lead {
   text-align: center;
   color: black;
   font-weight: 400;
 }
-

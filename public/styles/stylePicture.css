@@ -1,3 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+html, body {
+    height: 100%;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans Light', sans-serif;
+
+}
+
+.wrapper {
+        overflow: hidden;
+        background-color: #E8E9EC;
+}
+
+.container{
+    margin: 10px 10px;
+    overflow-x: hidden;
+    display: flex;
+    width: calc(100vw - 20px);
+    height: 100vh;
+    flex-direction: column;
+    margin: 10px 10px;
+    
+}
+
+.titleCard {
+    display: flex;
+    height: 8vh;
+    width: 90%;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #8CC2E3;
+    border: 8px solid#081335;
+    border-radius: 55px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.fullForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    height: 2vh;
+    width: 50%;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    font-size: 16px;
+    background-color: #8CC2E3;
+    border: 4px solid#081335;
+    border-radius: 55px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
 .bottomNav {
     height: 10vh;
     flex: 1 100%;
@@ -17,6 +80,8 @@
     height: 100%;
     display: flex;
     justify-content: space-evenly;
+    /* Changes the cursor to indicate it's clickable */
+    cursor: pointer; 
 }
 
 .innerIcon {
