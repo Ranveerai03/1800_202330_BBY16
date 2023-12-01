@@ -27,6 +27,7 @@ var uiConfig = {
             country: "Canada", //optional default profile info
             school: "BCIT",
             profileImageUrl: "", // Placeholder for profile image URL                          //optional default profile info
+            bookmarks:[],
           })
           .then(function () {
             console.log("New user added to firestore");

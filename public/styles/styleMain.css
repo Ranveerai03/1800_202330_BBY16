@@ -17,7 +17,7 @@ body{
     overflow-x: hidden;
     display: flex;
     width: calc(100vw - 20px);
-    height: 120vh;
+    height: 94vh;
     flex-wrap: wrap;
     margin: 10px 10px;
     flex-direction: column;
