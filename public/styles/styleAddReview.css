@@ -39,106 +39,181 @@ html {
     background-color: rgb(204, 206, 217);
 
     border-radius: 0px 0px 20px 20px;
-
-
 }
 
-/* header {
-    font-size: 20pt;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw;
-    background: #E8E9EC;
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-} */
 
-.view-option {
-    display: grid;
-    grid-template-columns: auto 10px auto;
-    grid-template-rows: auto auto;
-    text-align: center;
-    padding: 20px;
-}
 
-.button {
-    background-color: #b3b8bb;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
+/* dropdown menu styling */
+
+li a {
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 25px;
-    border: 2px solid #E8E9EC;
+    color: #2d2f31;
 }
 
-#reviews {
+.location {
+    width: 300px;
+    background: #d0d0d3;
+    margin: 40px auto;
+    border-radius: 25px;
+}
+
+#location {
+    padding: 30px;
     background-color: #798199;
-    border: none;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 25px;
-    border: 2px solid #ffffff;
-}
-
-#photos {
+    font-size: 1.2em;
+    font-variant: small-caps;
     cursor: pointer;
+    display: block;
+    border-radius: 25px;
 }
 
-.name {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 10px;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+#location::after {
+    float: right;
+    right: 10%;
+    content: "+";
 }
 
-#name-goes-here {
-    font-size: 30pt;
-    font-weight: bold;
+.slide1 {
+    clear: both;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    overflow-y: scroll;
     text-align: center;
-    color: #081335;
+    transition: height .4s ease;
 }
 
-#city-goes-here {
-    color: #333d5e
+.slide1 li {
+    padding: 30px;
 }
 
-#province-goes-here {
-    color: #333d5e
+#touch1 {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
 }
 
-.address {
+#touch1:checked+.slide1 {
+    height: 310px;
+}
+
+.icy {
+    width: 300px;
+    background: #d0d0d3;
+    margin: 10px auto;
+    border-radius: 25px;
+}
+
+#icy {
+    padding: 30px;
+    background-color: #798199;
+    color: white;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    cursor: pointer;
+    display: block;
+    border-radius: 25px;
+}
+
+#icy::after {
+    float: right;
+    right: 10%;
+    content: "+";
+}
+
+.slide2 {
+    clear: both;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    overflow-y: scroll;
     text-align: center;
+    transition: height .4s ease;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    border-radius: 35px;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-    padding: 20px;
+.slide2 li {
+    padding: 30px;
+}
+
+#touch2 {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}
+
+#touch2:checked+.slide2 {
+    height: 175px;
+}
+
+.condition {
+    width: 300px;
+    background: #d0d0d3;
+    margin: 40px auto;
+    border-radius: 25px;
+}
+
+#condition {
+    padding: 30px;
+    background-color: #798199;
+    color: white;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    cursor: pointer;
+    display: block;
+    border-radius: 25px;
+}
+
+#condition::after {
+    float: right;
+    right: 10%;
+    content: "+";
+}
+
+.slide3 {
+    clear: both;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    overflow-y: scroll;
     text-align: center;
-    /* background: linear-gradient(white, 10%, rgb(204, 206, 217)); */
+    transition: height .4s ease;
+}
+
+.slide3 li {
+    padding: 30px;
+}
+
+#touch3 {
+    position: absolute;
+    opacity: 0;
+    height: 0px;
+}
+
+#touch3:checked+.slide3 {
+    height: 350px;
+}
+
+textarea {
+    width: 80%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    background-color: #f8f8f8;
+    font-size: 16pt;
+    resize: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 10px;
+    margin: 10px 10% 50px;
 }
 
 
-.card p {
-    padding: 10px;
-}
 
+
+/* nav bar styling  */
 .bottomNav {
     height: 10vh;
     flex: 1 100%;
