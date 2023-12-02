@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SnowGo - Add Review or Photo</title>
+  <meta name="comp1800 template" content="My 1800 App" />
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap Library CSS CDN go here -->
+  <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    /> -->
+  <!-- Boostrap Library JS CDN  go here -->
+  <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script> -->
+
+  <!-- Other libraries go here -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Link to styles of your own -->
+  <link rel="stylesheet" href="../../public/styles/styleAddPhoto.css" />
+</head>
+
+<body>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
+  <!-- Stuff for body goes here -->
+  <div class="wrapper">
+    <!-- <div class="figure"><img src="../../public/images/bookmark.png" id="savePlace"></div> -->
+    <div class="container">
+      <!-- <header>Location Details</header> -->
+      <div class="title">Upload a Photo</div>
+      <div class="dropdown">
+        <select id="dropdown-menu">
+          <option value="" disabled selected>Select a Location</option>
+        </select>
+      </div>
+
+      <form>
+        <!-- <div class="form-group">
+          <label>Job Description</label>
+        </div> -->
+        <div class="card">
+          <input type="file" id="mypic-input" accept="image/*" />
+          <img id="mypic-goes-here" width=auto height=auto />
+        </div>
+        <div class="d-flex mt-5">
+          <button type="button" class="btn btn-info" onclick="savePost()">Upload Now</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="bottomNav">
+      <div class="icons" id="homeBtn"><img class="innerIcon" src="../../public/images/home.png"></div>
+      <div class="icons" id="bookmarkBtn"><img class="innerIcon" src="../../public/images/bookmark.png"></div>
+      <div class="icons middleIcon" id="plusBtn"><img class="innerIcon plusIcon"
+          src="../../public/images/whitePlus.png">
+      </div>
+      <div class="icons" id="searchBtn"><img class="innerIcon" src="../../public/images/loupe.png"></div>
+      <div class="icons" id="profileBtn"><img class="innerIcon" src="../../public/images/profile-user.png"></div>
+    </div>
+  </div>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+
+  <!-- Link to scripts of your own -->
+  <!-- <script src="./scripts/script.js"></script> -->
+  <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+  <script src="../../public/scripts/main.js"></script>
+  <script src="../../public/scripts/review.js"></script>
+  <script src="../../public/scripts/photoTest.js"></script>
+
+
+</body>
+
+</html>
