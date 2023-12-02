@@ -38,24 +38,24 @@ if (province) {
 }
 
 //Global variable pointing to the current user's Firestore document
-var currentUser;   
+var currentUser;
 
 //Function that calls everything needed for the main page  
 function doAll() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            currentUser = db.collection("users").doc(user.uid); //global
-            console.log(currentUser);
+  firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+      currentUser = db.collection("users").doc(user.uid); //global
+      console.log(currentUser);
 
-            // the following functions are always called when someone is logged in
-            populateReviews();
-            keepBookmark();
-        } else {
-            // No user is signed in.
-            console.log("No user is signed in");
-            window.location.href = "login.html";
-        }
-    });
+      // the following functions are always called when someone is logged in
+      populateReviews();
+      keepBookmark();
+    } else {
+      // No user is signed in.
+      console.log("No user is signed in");
+      window.location.href = "login.html";
+    }
+  });
 }
 doAll();
 
@@ -71,26 +71,22 @@ function populateReviews() {
   // Double-check: is your collection called "Reviews" or "reviews"?
   db.collection("reviews")
     .where("locationID", "==", locationID)
+    .orderBy("timestamp", "desc")
     .get()
     .then((allReviews) => {
       reviews = allReviews.docs;
-      reviews.forEach((doc) => {
+      const latestReviews = reviews.slice(0, 3); // Get the latest three reviews
+      const oldReviews = reviews.slice(3); // Get the rest of the reviews
+
+      latestReviews.forEach((doc) => {
         var condition = doc.data().condition;
         var icy = doc.data().icy;
         // var docID = doc.id;
         console.log("hello");
         var comment = doc.data().comment;
         var time = doc.data().timestamp.toDate();
-        // const bookmarks = doc.data().bookmarks;
-        // let newcard = cardTemplate.content.cloneNode(true); // Clone the HTML template to create a new card (newcard) that will be filled with Firestore data.
-
 
         console.log(time);
-
-        //assigning unique id to bookmark icon
-        //attaching an onclick, calling callback function (with hike's id)
-        // newcard.querySelector('i').id = 'save-' + docID;   //guaranteed to be unique
-        // newcard.querySelector('i').onclick = () => saveBookmark(docID);
 
         let reviewCard = reviewCardTemplate.content.cloneNode(true);
         reviewCard.querySelector(".condition").innerHTML = `Condition: <b>${condition}</b>`;
@@ -98,21 +94,15 @@ function populateReviews() {
         reviewCard.querySelector(".icy").innerHTML = `Icy: ${icy}`;
         reviewCard.querySelector(".comment").innerHTML = `Comments: ${comment}`;
 
-        // console.log(userDoc);
-
-    //     currentUser.get().then(userDoc => {
-    //       //get the user name
-    //       var bookmarks = userDoc.data().bookmarks;
-    //       console.log(bookmarks);
-    //       console.log(locationID);
-    //       if (bookmarks.includes(locationID)) {
-    //         document.getElementById('save-' + locationID).innerText = 'bookmark';
-    //       }
-    // })
-
         reviewCardGroup.appendChild(reviewCard);
       });
-    });
+      // Delete the rest of the reviews
+      oldReviews.forEach((doc) => {
+        doc.ref.delete();
+      });
+    })
+
+
 }
 
 
@@ -131,23 +121,23 @@ function saveBookmark(locationDocID) {
     let isBookmarked = bookmarks.includes(locationDocID);
 
     if (isBookmarked) {
-        // Remove bookmark
-        currentUser.update({
-            bookmarks: firebase.firestore.FieldValue.arrayRemove(locationDocID)
-        }).then(() => {
-            console.log("Bookmark removed for " + locationDocID);
-            document.getElementById(iconID).innerText = 'bookmark_border';
-        });
+      // Remove bookmark
+      currentUser.update({
+        bookmarks: firebase.firestore.FieldValue.arrayRemove(locationDocID)
+      }).then(() => {
+        console.log("Bookmark removed for " + locationDocID);
+        document.getElementById(iconID).innerText = 'bookmark_border';
+      });
     } else {
-        // Add bookmark
-        currentUser.update({
-            bookmarks: firebase.firestore.FieldValue.arrayUnion(locationDocID)
-        }).then(() => {
-            console.log("Bookmark added for " + locationDocID);
-            document.getElementById(iconID).innerText = 'bookmark';
-        });
+      // Add bookmark
+      currentUser.update({
+        bookmarks: firebase.firestore.FieldValue.arrayUnion(locationDocID)
+      }).then(() => {
+        console.log("Bookmark added for " + locationDocID);
+        document.getElementById(iconID).innerText = 'bookmark';
+      });
     }
-});
+  });
 }
 
 let params = new URL(window.location.href); // Get the URL from the search bar
@@ -157,7 +147,7 @@ document.querySelector('i').id = 'save-' + locationID;   //guaranteed to be uniq
 document.querySelector('i').onclick = () => saveBookmark(locationID);
 // document.querySelector('i').onclick = () => console.log(locationID);
 
-function keepBookmark(){
+function keepBookmark() {
   currentUser.get().then(userDoc => {
     //get the user name
     var bookmarks = userDoc.data().bookmarks;
@@ -168,7 +158,7 @@ function keepBookmark(){
     } else {
       document.getElementById('save-' + locationID).innerText = 'bookmark_border';
     }
-})
+  })
 }
 
 

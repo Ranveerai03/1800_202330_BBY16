@@ -29,6 +29,9 @@
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script> 
+    <link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,19 +54,14 @@
     <div class="container">
       <!-- <header>Location Details</header> -->
       <div class="title">Write a Review</div>
-      <nav class="location">
-        <label for="touch1"><span id="location">select location</span></label>
-        <input type="checkbox" id="touch1">
+      <div class="dropdown">
+        <select id="dropdown-menu">
+          <option value="" disabled selected>Select a Location</option>
+        </select>
+      </div>
 
-        <ul class="slide1">
-          <li><a href="#">Lorem Ipsum Longer Location Name</a></li>
-          <li><a href="#">Lorem Ipsum Also Longer Location</a></li>
-          <li><a href="#">Lorem Ipsum</a></li>
-          <li><a href="#">Lorem Ipsum</a></li>
-        </ul>
-      </nav>
 
-      <nav class="icy">
+      <!-- <nav class="icy">
         <label for="touch2"><span id="icy">icy?</span></label>
         <input type="checkbox" id="touch2">
 
@@ -71,9 +69,16 @@
           <li><a href="#">Yes</a></li>
           <li><a href="#">No</a></li>
         </ul>
-      </nav>
+      </nav> -->
+      <div class="icyCheckbox">
+        <select id="icy-road">
+          <option value="" disabled selected>Is the road icy?</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
 
-      <nav class="condition">
+      <!-- <nav class="condition">
         <label for="touch3"><span id="condition">select condition</span></label>
         <input type="checkbox" id="touch3">
 
@@ -83,11 +88,28 @@
           <li><a href="#">Snow</a></li>
           <li><a href="#">Heavy Snow</a></li>
         </ul>
-      </nav>
+      </nav> -->
+      <div class="snowCondition">
+        <select id="snow-type">
+          <option value="" disabled selected>Select a snow type</option>
+          <option value="clear">Clear</option>
+          <option value="slight-snow">Slight Snow</option>
+          <option value="slush">Slush</option>
+          <option value="heavy-snow">Heavy Snow</option>
+        </select>
+      </div>
 
-      <form>
+      <!-- <form>
         <textarea placeholder="Type your comments here"></textarea>
-      </form>
+      </form> -->
+      <div class="textbox">
+        <form>
+          <label id="reviewTitle" for="review">Enter your review:</label><br /><br />
+          <textarea id="review" name="review"></textarea><br />
+          <!-- <button type="submit">Submit</button> -->
+          <button class="submitBtn" type="submit">Submit</button>
+        </form>
+      </div>
 
       <!-- <label class="icy">
         <input type="checkbox"><span>Icy?</span>
@@ -114,7 +136,7 @@
   <!-- <script src="./scripts/script.js"></script> -->
   <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
   <script src="../../public/scripts/main.js"></script>
-  <!-- <script src="../../public/scripts/saved.js"></script> -->
+  <script src="../../public/scripts/review.js"></script>
 
 
 </body>
