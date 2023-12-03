@@ -129,3 +129,41 @@ document.addEventListener("DOMContentLoaded", function () {
 document.getElementById("aboutus").onclick = function () {
   location.href = "../../app/html/aboutUs.html";
 };
+var mainLocationHere;
+function addReview() {
+    const collectionRef = db.collection("searches");
+    console.log(collectionRef);
+    collectionRef.get().then((querySnapshot) => {
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        querySnapshot.forEach((doc) => {
+            const option = document.createElement('option');
+            option.text = doc.data().name;
+            dropdownMenu.add(option);
+            
+        });
+    });
+    const dropdownMenu = document.getElementById('dropdown-menu');
+    dropdownMenu.addEventListener('change', (event) => {
+        // Do something with the selected item
+        const selectedName = event.target.value;
+        console.log(selectedName);
+        collectionRef.where('name', '==', selectedName).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // Do something with the data
+                mainLocationHere = doc.id;
+                saveLocation();
+                console.log(mainLocationHere);
+            });
+        });
+    });
+  }
+
+  addReview();
+
+  var currentUser;
+  function saveLocation(){
+    currentUser = db.collection("users").doc(user.uid); //global
+    currentUser.update({
+      mainLocation: mainLocationHere
+    })
+  }

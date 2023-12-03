@@ -5,7 +5,7 @@ body {
   background-image: url("../../public/images/winterBackground2.jpeg");
   background-position: center;
   background-size: cover;
-  overflow-y: hidden;
+  overflow-y:scroll;
 }
 
 .container {
@@ -14,7 +14,7 @@ body {
   flex-direction: column;
   height: auto;
   min-height: 100vh;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 
 .title {
@@ -75,10 +75,11 @@ body {
 .bottomNav {
   height: 10vh;
   flex: 1 100%;
+  width: 100%;
   background-color: rgb(204, 206, 217, 0.8);
   border-radius: 20px 20px 0px 0px;
   border-top: 1px solid black;
-  position: sticky;
+  position: fixed;
   bottom: 0px;
   display: flex;
   justify-content: space-around;

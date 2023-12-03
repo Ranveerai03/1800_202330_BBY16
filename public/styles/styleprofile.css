@@ -128,7 +128,9 @@ html {
 }
 
 #notif-header {
+  font-size: 20pt;
   padding: 10px;
+  /* border: 1px solid red; */
 }
 
 #notif1 {
@@ -153,59 +155,14 @@ html {
   height: 0;
 }
 
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-input:checked+.slider {
-  background-color: #8cc2e3;
-}
-
-input:focus+.slider {
-  box-shadow: 0 0 1px #8cc2e3;
-}
-
-input:checked+.slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
 
 #security-header {
+  font-size: 20pt;
   padding: 10px;
 }
 
 #aboutus {
+  font-size: 20pt;
   padding: 10px;
   cursor: pointer;
 }
@@ -213,6 +170,18 @@ input:checked+.slider:before {
 #aboutus:hover {
   color: #081335;
   /* or a different color for hover state */
+}
+.mainLocation{
+  /* border: 1px solid red; */
+  margin: 0px;
+  width: 96%;
+}
+#dropdown-menu{
+  width: 100%;
+  background-color: rgb(204, 206, 217, 08);
+  border-radius: 10px;
+  text-align: center;
+  height: 40px;
 }
 
 #settings {
