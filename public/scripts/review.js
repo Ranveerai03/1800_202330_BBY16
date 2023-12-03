@@ -101,12 +101,12 @@ function addReview() {
                 console.log('Review submitted successfully!');
                 swal({
                     title: "Success!",
-                    text: "Redirecting Home in 2 seconds.",
+                    text: "Redirecting in 2 seconds.",
                     type: "success",
                     timer: 2000,
                     showConfirmButton: false
                 }, function () {
-                    window.location.href = "../../app/html/main.html";
+                    window.location.href = "../../app/html/add.html";
                 });
             })
             .catch((error) => {

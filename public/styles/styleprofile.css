@@ -6,42 +6,52 @@
 
 body,
 html {
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(204, 206, 217)
 }
 
 .wrapper {
   background-color: #e8e9ec;
   margin: 0;
+  background-image: url("../../public/images/snowRoad.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 .container {
   display: flex;
-  width: 90vw;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   flex-wrap: wrap;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
 }
 
-header {
-  font-size: 20pt;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  width: 100vw;
-  background: #e8e9ec;
-  padding: 0;
-  padding-top: 10px;
-  padding-bottom: 10px;
+.title {
+  /* border: 1px solid red; */
+  /* border-radius: 25px; */
+  width: calc(100% - 32px);
+  height: auto;
+  align-self: center;
+  text-align: center;
+  font-size: 24pt;
+  font-weight: 900;
+
+  padding: 16px;
+  background-color: rgb(204, 206, 217);
+
+  border-radius: 0px 0px 20px 20px;
 }
 
 .profile-card {
   /* background-color:#8cc2e3; */
-  background-color: #ffffff;
+  background-color: rgb(204, 206, 217, 0.9);
   border-radius: 35px;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px;
+  width: 96%;
+  /* margin-left: 50px;
+  margin-right: 50px; */
+  margin: 20px 0px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
@@ -108,10 +118,11 @@ header {
 .settings-card {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
+  width: calc(96% - 40px);
+  background-color: rgb(204, 206, 217, 0.9);
   border-radius: 35px;
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding: 20px;
 }
@@ -222,7 +233,7 @@ input:checked+.slider:before {
 .bottomNav {
   height: 10vh;
   flex: 1 100%;
-  background-color: #ffffff;
+  background-color: rgb(204, 206, 217, 0.8);
   border-radius: 20px 20px 0px 0px;
   border-top: 1px solid black;
   position: sticky;

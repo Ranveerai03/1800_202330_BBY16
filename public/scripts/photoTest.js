@@ -23,8 +23,7 @@ function savePost() {
             db.collection("photos").add({
                 owner: user.uid,
                 description: desc,
-                last_updated: firebase.firestore.FieldValue
-                    .serverTimestamp() //current system time
+                last_updated: firebase.firestore.FieldValue.serverTimestamp() //current system time
             }).then(doc => {
                 console.log("1. Post document added!");
                 console.log(doc.id);

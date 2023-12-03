@@ -1,127 +1,119 @@
-html, body { 
-    height: 100%; 
-    margin: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-image: url("../../public/images/winterBackground2.jpeg");
+  background-position: center;
+  background-size: cover;
+  overflow-y: hidden;
 }
 
 .container {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+  overflow-y: hidden;
 }
 
-.title{
-    /* border: 1px solid red; */
-    /* border-radius: 25px; */
-    width: calc(100% - 32px);
-    height: auto;
-    align-self: center;
-    text-align: center;
-    font-size: 24pt;
-    font-weight: 900;
+.title {
+  /* border: 1px solid red; */
+  /* border-radius: 25px; */
+  width: calc(100% - 32px);
+  height: auto;
+  align-self: center;
+  text-align: center;
+  font-size: 24pt;
+  font-weight: 900;
 
-    padding: 16px;
-    background-color: rgb(204, 206, 217);
+  padding: 16px;
+  background-color: rgb(204, 206, 217, 0.8);
 
-    border-radius: 0px 0px 20px 20px;
+  border-radius: 0px 0px 20px 20px;
 }
-#add{
-    border-radius: 25px;
-    padding: 20px;
-    min-width: auto;
-    height: auto; 
-    margin: 20px;
-    margin-bottom: 10px;
-    background-color: #081335;
-    color: white;
-    text-align: center;
+#add {
+  border-radius: 25px;
+  padding: 20px;
+  min-width: auto;
+  height: auto;
+  margin: 20px;
+  margin-bottom: 10px;
+  background-color: #081335;
+  color: white;
+  text-align: center;
 }
 
 .cards {
-    flex: 1;
+  flex: 1;
 }
 
 .card-body {
-    border-radius: 25px;
-    padding: 1% 20px;
-    min-width: auto;
-    height: auto; 
-    margin: 20px;
-    background-color: #FFFFFF;
-    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.48);
+  border-radius: 25px;
+  padding: 1% 20px;
+  min-width: auto;
+  height: auto;
+  margin: 20px 10px;
+  background-color: rgb(204, 206, 217, 0.9);
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.48);
+}
+.card-title {
+  font-size: 20pt;
+  font-weight: 900;
+  /* border:1px solid red; */
+}
+.card-city {
+  font-size: 18pt;
+  font-weight: 550;
+  /* border: 1px solid green; */
+}
+.route-timestamp {
+  font-size: 14pt;
+  font-weight: 400;
+}
 
+.bottomNav {
+  height: 10vh;
+  flex: 1 100%;
+  background-color: rgb(204, 206, 217, 0.8);
+  border-radius: 20px 20px 0px 0px;
+  border-top: 1px solid black;
+  position: sticky;
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
 }
-.card-title{
-    font-size: 20pt;
-    font-weight: 900;
-    /* border:1px solid red; */
+.icons {
+  /* border: 1px solid red; */
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  /* Changes the cursor to indicate it's clickable */
+  cursor: pointer;
 }
-.card-city{
-    font-size: 18pt;
-    font-weight: 550;
-    /* border: 1px solid green; */
+.innerIcon {
+  /* border: 1px solid green; */
+  width: 35%;
+  height: 35%;
+  align-self: center;
 }
-.route-timestamp{
-    font-size: 14pt;
-    font-weight: 400;
+.middleIcon {
+  background-color: #081335;
+  border-radius: 20px;
+  width: 85%;
+  height: 85%;
+  margin-bottom: 12%;
 }
-
-
-.bottomNav{
-    height: 10vh;
-    flex: 1 100%;
-    background-color: #FFFFFF;
-    border-radius: 20px 20px 0px 0px;
-    border-top: 1px solid black;
-    position: sticky;
-    bottom: 0px;
-    display: flex;
-    justify-content: space-around;
-    cursor: pointer;
+.plusIcon {
+  width: 50%;
+  height: 50%;
 }
-.icons{
-    /* border: 1px solid red; */
-    align-self: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    /* Changes the cursor to indicate it's clickable */
-    cursor: pointer; 
-}
-.innerIcon{
-    /* border: 1px solid green; */
-    width: 35%;
-    height: 35%;
-    align-self: center;
-
-}
-.middleIcon{
-    background-color: #081335;
-    border-radius: 20px;
-    width: 85%;
-    height: 85%;
-    margin-bottom: 12%;
-}
-.plusIcon{
-    width: 50%;
-    height: 50%;
-}
-#add{
-    cursor: pointer;
+#add {
+  cursor: pointer;
 }
 a {
-    all: unset;
+  all: unset;
 }
-
-
-
-
-
-
-
-
-
-
-
