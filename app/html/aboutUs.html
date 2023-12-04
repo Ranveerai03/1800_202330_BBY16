@@ -2,133 +2,144 @@
 <html lang="en">
 
 <head>
-    <title>My BCIT Project</title>
-    <meta name="comp1800 template" content="My 1800 App">
+  <title>My BCIT Project</title>
+  <meta name="comp1800 template" content="My 1800 App">
 
-    <!------------------------>
-    <!-- Required meta tags -->
-    <!------------------------>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!------------------------>
+  <!-- Required meta tags -->
+  <!------------------------>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!------------------------------------------>
-    <!-- Bootstrap Library CSS JS CDN go here -->
-    <!------------------------------------------>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+  <!------------------------------------------>
+  <!-- Bootstrap Library CSS JS CDN go here -->
+  <!------------------------------------------>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 
-    <!-------------------------------------------------------->
-    <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
-    <!-------------------------------------------------------->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script> 
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
+    rel="stylesheet">
 
-    <!-------------------------------------------->
-    <!-- Other libraries and styles of your own -->
-    <!-------------------------------------------->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-    <link rel="stylesheet" href="../../public/styles/styleAboutUs.css">
+  <!-------------------------------------------------------->
+  <!-- Firebase 8 Library related CSS, JS, JQuery go here -->
+  <!-------------------------------------------------------->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-------------------------------------------->
+  <!-- Other libraries and styles of your own -->
+  <!-------------------------------------------->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link rel="stylesheet" href="../../public/styles/styleAboutUs.css">
 
 </head>
 
 <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+  <!------------------------------>
+  <!-- Your HTML Layout go here -->
+  <!------------------------------>
 
-    <!-- our own navbar goes here -->
-    <!-- <nav id="navbarPlaceholder"></nav> -->
+  <!-- our own navbar goes here -->
+  <!-- <nav id="navbarPlaceholder"></nav> -->
 
-    <!-- the body of your page goes here -->
-    <!-- stuff -->
-    <div class="wrapper">
-        <div class="container">
-            <header>
-                <h1>About Us</h1>
-            </header>
-        
-            <section class="about-section">
-                <h2>Our Mission</h2>
-                <p>Our team of BBY16 is developing SnowGo, an innovative web application dedicated to enhancing the winter commuting experience in Metro Vancouver. 
-                </p>
-            </section>
-        
-            <section class="team-section">
-                <h2>Team BBY16</h2>
-                <div class="team-member">
-                    <!-- <img src="path-to-image.jpg" alt="Team Member Name"> -->
-                    <p>Ranveer Rai, Team Leader</p>
-                    <p>Chelsea Pang, Designer</p>
-                    <p>Elena Zhu, Designer</p>
-                    <p>Jeremy Arciaga, Coder</p>
-                </div>
-            </section>
-        
-            <section class="history-section">
-                <h2>Our Journey: A User-Centric Approach</h2>
-                <p>SnowGo's journey began with a clear goal: to make winter commuting easier and safer. 
-                    Our approach centered around our users - understanding their challenges and needs during winter travel. 
-                    We started by creating detailed personas, representing the diverse range of commuters we serve, from office workers to freelancers.</p>
-                <p>Focusing on "red routes", the essential features our users needed most, we honed in on providing real-time road and weather updates in an accessible and user-friendly manner. 
-                    Our development was driven by user stories, 
-                    ensuring every feature of SnowGo directly addressed the daily objectives and challenges faced by commuters in snowy conditions.</p>
-                <p>The result is SnowGo, more than just an app - it's a reliable winter travel companion, 
-                    empowering users to navigate winter roads with confidence and ease. 
-                    At SnowGo, we’re proud to have created an app that genuinely resonates with and improves the lives of our users.</p>
-            </section>
-        
-            <section class="testimonials-section">
-                <h2>Testimonials</h2>
-                <p>
-                  "Living in a region with harsh winter conditions, driving used to be a challenge. SnowGo has been a game-changer for me. The accurate and timely information on road and weather conditions has greatly improved my commuting experience."
-                    <footer>— Emily Johnson, BCIT Student</footer>
-                </p>
-                <p>
-                    "Before I discovered SnowGo, my winter commutes were always stressful and unpredictable. Now, with real-time updates on road conditions, weather forecasts, and snow levels, I can plan my journey with confidence."
-                    <footer>— Jordan Smith, Daily Commuter</footer>
-                </p>
-                <!-- Repeat for other testimonials -->
-            </section>
-            
-            </div>
-          </div>
-        </div>
+  <!-- the body of your page goes here -->
+  <!-- stuff -->
+  <div class="wrapper">
+    <div class="container">
+      <header>
+        <h1>About Us</h1>
+      </header>
 
-    <!-- our own footer goes here-->
-    <div class="bottomNav">
-        <div class="icons" id="homeBtn">
-          <img class="innerIcon" src="../../public/images/home.png" />
+      <section class="about-section">
+        <h2>Our Mission</h2>
+        <p>Our team of BBY16 is developing SnowGo, an innovative web application dedicated to enhancing the winter
+          commuting experience in Metro Vancouver.
+        </p>
+      </section>
+
+      <section class="team-section">
+        <h2>Team BBY16</h2>
+        <div class="team-member">
+          <!-- <img src="path-to-image.jpg" alt="Team Member Name"> -->
+          <p>Ranveer Rai, Team Leader</p>
+          <p>Chelsea Pang, Designer</p>
+          <p>Elena Zhu, Designer</p>
+          <p>Jeremy Arciaga, Coder</p>
         </div>
-        <div class="icons" id="bookmarkBtn">
-          <img class="innerIcon" src="../../public/images/bookmark.png" />
-        </div>
-        <div class="icons middleIcon" id="plusBtn">
-          <img
-            class="innerIcon plusIcon"
-            src="../../public/images/whitePlus.png"
-          />
-        </div>
-        <div class="icons" id="searchBtn">
-          <img class="innerIcon" src="../../public/images/loupe.png" />
-        </div>
-        <div class="icons" id="profileBtn">
-          <img class="innerIcon" src="../../public/images/profile-user.png" />
-        </div>
-      </div>
+      </section>
+
+      <section class="history-section">
+        <h2>Our Journey: A User-Centric Approach</h2>
+        <p>SnowGo's journey began with a clear goal: to make winter commuting easier and safer.
+          Our approach centered around our users - understanding their challenges and needs during winter travel.
+          We started by creating detailed personas, representing the diverse range of commuters we serve, from office
+          workers to freelancers.</p>
+        <p>Focusing on "red routes", the essential features our users needed most, we honed in on providing real-time
+          road and weather updates in an accessible and user-friendly manner.
+          Our development was driven by user stories,
+          ensuring every feature of SnowGo directly addressed the daily objectives and challenges faced by commuters in
+          snowy conditions.</p>
+        <p>The result is SnowGo, more than just an app - it's a reliable winter travel companion,
+          empowering users to navigate winter roads with confidence and ease.
+          At SnowGo, we’re proud to have created an app that genuinely resonates with and improves the lives of our
+          users.</p>
+      </section>
+
+      <section class="testimonials-section">
+        <h2>Testimonials</h2>
+        <p>
+          "Living in a region with harsh winter conditions, driving used to be a challenge. SnowGo has been a
+          game-changer for me. The accurate and timely information on road and weather conditions has greatly improved
+          my commuting experience."
+        <footer>— Emily Johnson, BCIT Student</footer>
+        </p>
+        <p>
+          "Before I discovered SnowGo, my winter commutes were always stressful and unpredictable. Now, with real-time
+          updates on road conditions, weather forecasts, and snow levels, I can plan my journey with confidence."
+        <footer>— Jordan Smith, Daily Commuter</footer>
+        </p>
+        <!-- Repeat for other testimonials -->
+      </section>
+
     </div>
+  </div>
+  </div>
 
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-    <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
-    <script src="../../public/scripts/aboutUs.js"></script>
+  <!-- our own footer goes here-->
+  <div class="bottomNav">
+    <div class="icons" id="homeBtn">
+      <img class="innerIcon" src="../../public/images/home.png" />
+    </div>
+    <div class="icons" id="bookmarkBtn">
+      <img class="innerIcon" src="../../public/images/bookmark.png" />
+    </div>
+    <div class="icons middleIcon" id="plusBtn">
+      <img class="innerIcon plusIcon" src="../../public/images/whitePlus.png" />
+    </div>
+    <div class="icons" id="searchBtn">
+      <img class="innerIcon" src="../../public/images/loupe.png" />
+    </div>
+    <div class="icons" id="profileBtn">
+      <img class="innerIcon" src="../../public/images/profile-user.png" />
+    </div>
+  </div>
+  </div>
+
+  <!---------------------------------------------->
+  <!-- Your own JavaScript functions go here    -->
+  <!---------------------------------------------->
+  <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+  <script src="../../public/scripts/aboutUs.js"></script>
 
 </body>
 

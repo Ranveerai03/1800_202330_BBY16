@@ -51,6 +51,8 @@ html {
     max-width: 90%;
     min-width: 90%;
     text-align: center;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    margin-top: 20px;
 }
 
 #dropdown-menu {
@@ -63,7 +65,7 @@ html {
     display: flex;
     justify-content: center;
     text-align: center;
-
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 form {
@@ -99,6 +101,7 @@ input[type=file]::file-selector-button {
     color: #fff;
     cursor: pointer;
     font-family: Lexend;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .btn {
@@ -113,6 +116,7 @@ input[type=file]::file-selector-button {
     text-shadow: none;
     /* margin-top: 10px; */
     margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 /* nav bar styling  */
