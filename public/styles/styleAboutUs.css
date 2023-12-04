@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Lexend;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -76,7 +76,8 @@ header {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  cursor: pointer; /* Changes the cursor to indicate it's clickable */
+  cursor: pointer;
+  /* Changes the cursor to indicate it's clickable */
 }
 
 .innerIcon {

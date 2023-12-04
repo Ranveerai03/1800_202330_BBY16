@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px;
   font-size: 16pt;
+  font-family: Lexend;
 }
 
 body,
@@ -171,12 +172,14 @@ html {
   color: #081335;
   /* or a different color for hover state */
 }
-.mainLocation{
+
+.mainLocation {
   /* border: 1px solid red; */
   margin: 0px;
   width: 96%;
 }
-#dropdown-menu{
+
+#dropdown-menu {
   width: 100%;
   background-color: rgb(204, 206, 217, 08);
   border-radius: 10px;
