@@ -10,13 +10,14 @@ body {
     bottom: 0;  */
   width: 100%;
   /* Changed from 90vh to 95vh */
-  height: 95vh;
+  height: 100vh;
   /* Extend the map slightly under the navbar */
   margin-bottom: -5vh;
 }
 .mapboxgl-ctrl-logo {
   display: none !important;
 }
+
 
 
 .bottomNav {
