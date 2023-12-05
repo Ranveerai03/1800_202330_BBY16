@@ -28,6 +28,8 @@ var uiConfig = {
             school: "BCIT",
             profileImageUrl: "", // Placeholder for profile image URL                          //optional default profile info
             bookmarks:[],
+            mainLocation: "ywwzV8QsjT5rbQYyadp7",
+            weatherLocation: "Vancouver",
           })
           .then(function () {
             console.log("New user added to firestore");
