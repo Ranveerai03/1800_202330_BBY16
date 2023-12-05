@@ -2,8 +2,10 @@
 // Initialize Firebase Auth and get the current user.
 // Checks if a user is logged in and updates the profile information accordingly
 //----------------------------------------------------------
+var currentUser;
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
+    currentUser = db.collection("users").doc(user.uid);
     insertNameFromFirestore(user);
     insertEmailFromFirestore(user);
   } else {
@@ -126,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // About Us Page Navigation
-document.getElementById("aboutus").onclick = function () {
+document.getElementById("learnMore").onclick = function () {
   location.href = "../../app/html/aboutUs.html";
 };
 var mainLocationHere;
@@ -160,10 +162,47 @@ function addReview() {
 
   addReview();
 
-  var currentUser;
   function saveLocation(){
-    currentUser = db.collection("users").doc(user.uid); //global
     currentUser.update({
       mainLocation: mainLocationHere
     })
+    .then(() => {
+      swal({
+        title: "Success!",
+        text: "Main Card Location is saved.",
+        timer: 2000
+      });
+  })
   }
+
+  // function setLocation() {
+  //   var location = prompt("Please enter your location", "");
+  //   if (location != null) {
+  //     // Do something with the location variable
+  //     console.log(location);
+  //   }
+  // }
+
+  function setLocation() {
+    document.getElementById("custom-text-box").style.display = "block";
+  }
+  
+  function saveLocations() {
+    var location = document.getElementById("location-input").value;
+    if (location != "") {
+      // Do something with the location variable
+      currentUser.update({
+        weatherLocation: location
+      }).then(() => {
+        swal({
+          title: "Success!",
+          text: "Weather Location is saved.",
+          timer: 2000
+        });
+    })
+      console.log(location);
+    }
+  }
+  
+  
+  

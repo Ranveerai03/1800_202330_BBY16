@@ -1,93 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../public/styles/styleprofile.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <!-- This line is important -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
-  <link rel="stylesheet" href="../../public/styles/styleprofile.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-  <!-- This line is important -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="title">Profile</div>
-      <div class="profile-card">
-        <div class="profile-img">
-          <!-- Default profile image -->
-          <img id="profileImage" src="../../public/images/default_profile_circle.png" />
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="title">Profile</div>
+        <div class="profile-card">
+          <div class="profile-img">
+            <!-- Default profile image -->
+            <img
+              id="profileImage"
+              src="../../public/images/default_profile_circle.png"
+            />
+          </div>
+          <div class="name">
+            <div id="name-goes-here"></div>
+          </div>
+          <div class="email">
+            <div id="email-goes-here"></div>
+          </div>
+          <!-- Image upload input -->
+          <input
+            type="file"
+            id="imageUpload"
+            accept="image/*"
+            style="display: none"
+          />
+          <div
+            id="upload"
+            onclick="document.getElementById('imageUpload').click()"
+          >
+            Upload Image
+          </div>
         </div>
-        <div class="name">
-          <div id="name-goes-here"></div>
-        </div>
-        <div class="email">
-          <div id="email-goes-here"></div>
-        </div>
-        <!-- Image upload input -->
-        <input type="file" id="imageUpload" accept="image/*" style="display: none" />
-        <div id="upload" onclick="document.getElementById('imageUpload').click()">
-          Upload Image
-        </div>
-      </div>
-      <div class="settings-card">
-        <div class="notifications">
-          <div id="notif-header">Main Review Location</div>
-          <div id="notif1">
-            <div class="mainLocation">
-              <select id="dropdown-menu">
-                <option id="mainOption" value="" disabled selected>Select Location
-                <option>
-              </select>
+        <div class="settings-card">
+          <div class="notifications">
+            <div id="notif-header">Main Review Location</div>
+            <div id="notif1">
+              <div class="mainLocation">
+                <select id="dropdown-menu">
+                  <option id="mainOption" value="" disabled selected>
+                    Select Location
+                  </option>
+                  <option></option>
+                </select>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="security">
-          <div id="security-header">Main Weather Location</div>
-          <div id="security1">
-            <div>Set Location</div>
-            <div><img src="../../public/images/right-arrow.png" /></div>
+          <div class="security">
+            <div id="security-header">Main Weather Location</div>
+            <div id="security1">
+              <div id="setLocation" onclick="setLocation()">
+                Set Weather Location
+              </div>
+            </div>
+            <div id="custom-text-box" style="display: none">
+              <input
+                type="text"
+                id="location-input"
+                placeholder="Enter your location"
+              />
+              <button onclick="saveLocations()">Save</button>
+            </div>
+            <div id="aboutus">About Us</div>
+            <div id="learnMore">Learn More</div>
+            <div class="logout" id="logout">Logout</div>
           </div>
-          <div id="aboutus">About Us</div>
-          <div id="settings">Settings</div>
-          <div class="logout" id="logout">Logout</div>
+        </div>
+      </div>
+      <div class="bottomNav">
+        <div class="icons" id="homeBtn">
+          <img class="innerIcon" src="../../public/images/home.png" />
+        </div>
+        <div class="icons" id="bookmarkBtn">
+          <img class="innerIcon" src="../../public/images/bookmark.png" />
+        </div>
+        <div class="icons middleIcon" id="plusBtn">
+          <img
+            class="innerIcon plusIcon"
+            src="../../public/images/whitePlus.png"
+          />
+        </div>
+        <div class="icons" id="searchBtn">
+          <img class="innerIcon" src="../../public/images/loupe.png" />
+        </div>
+        <div class="icons" id="profileBtn">
+          <img class="innerIcon" src="../../public/images/profile-user.png" />
         </div>
       </div>
     </div>
-    <div class="bottomNav">
-      <div class="icons" id="homeBtn">
-        <img class="innerIcon" src="../../public/images/home.png" />
-      </div>
-      <div class="icons" id="bookmarkBtn">
-        <img class="innerIcon" src="../../public/images/bookmark.png" />
-      </div>
-      <div class="icons middleIcon" id="plusBtn">
-        <img class="innerIcon plusIcon" src="../../public/images/whitePlus.png" />
-      </div>
-      <div class="icons" id="searchBtn">
-        <img class="innerIcon" src="../../public/images/loupe.png" />
-      </div>
-      <div class="icons" id="profileBtn">
-        <img class="innerIcon" src="../../public/images/profile-user.png" />
-      </div>
-    </div>
-  </div>
 
-  <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
-  <script src="../../public/scripts/authentication.js"></script>
-  <script src="../../public/scripts/main.js"></script>
-  <script src="../../public/scripts/profile.js"></script>
-</body>
-
+    <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+    <script src="../../public/scripts/authentication.js"></script>
+    <script src="../../public/scripts/main.js"></script>
+    <script src="../../public/scripts/profile.js"></script>
+  </body>
 </html>

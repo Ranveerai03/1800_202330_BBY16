@@ -28,5 +28,39 @@ document.querySelector(".search button").addEventListener("click", function (){
         weather.search();
 });
 
-weather.fetchWeather("Vancouver")
+
+var currentUser;
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    currentUser = db.collection("users").doc(user.uid);
+    insertNameFromFirestore(user);
+  } else {
+    // Handle user not logged in
+    console.log("No user logged in");
+  }
+});
+
+var location;
+function insertNameFromFirestore(user) {
+    db.collection("users")
+      .doc(user.uid)
+      .get()
+      .then((userDoc) => {
+        console.log(userDoc.data().weatherLocation);
+        // location = userDoc.data().weatherLocation;
+        weather.fetchWeather(userDoc.data().weatherLocation);
+      });
+  }
+
+// const docRef = db.collection("users").doc(test);
+
+// docRef.get().then((doc) => {
+//         const data = doc.data();
+//         const weatherLocation = data.country;
+//         console.log(weatherLocation);
+// });
+
+
+
+// weather.fetchWeather("Burnaby")
 

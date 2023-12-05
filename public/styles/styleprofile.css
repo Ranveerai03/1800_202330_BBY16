@@ -8,7 +8,7 @@
 body,
 html {
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: rgb(204, 206, 217)
 }
 
@@ -23,7 +23,7 @@ html {
 .container {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
@@ -105,6 +105,7 @@ html {
   justify-content: center;
   background-color: #081335;
   color: white;
+  text-align: center;
   padding: 15px;
   border-radius: 25px;
   margin-left: 120px;
@@ -115,7 +116,28 @@ html {
   /* Changes the cursor to indicate it's clickable */
   cursor: pointer;
 }
-
+#setLocation{
+  border: 1px solid black;
+  box-shadow: 5px 5px 15px 1px inset rgba(0, 0, 0, 0.1);
+  width: 96%;
+  background-color: rgb(204, 206, 217, 08);
+  border-radius: 10px;
+  text-align: center;
+  height: calc(40px);
+  padding-top: 2%;
+  cursor: pointer;
+}
+#learnMore{
+  border: 1px solid black;
+  box-shadow: 5px 5px 15px 1px inset rgba(0, 0, 0, 0.1);
+  width: 96%;
+  background-color: rgb(204, 206, 217, 08);
+  border-radius: 10px;
+  text-align: center;
+  height: calc(40px);
+  padding-top: 2%;
+  cursor: pointer;
+}
 .settings-card {
   display: flex;
   flex-direction: column;

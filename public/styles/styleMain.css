@@ -8,26 +8,27 @@
 
 body {
   width: 100vw;
-  height: 100vh;
-  background-color: rgb(204, 206, 217)
+  min-height: 110vh;
+  height: auto;
+  background-color: rgb(204, 206, 217);
 }
 
 .wrapper {
   overflow: hidden;
+  min-height: 100vh;
   height: 100%;
   background-color: #e8e9ec;
   background-image: url("../../public/images/snowRoad.jpg");
   background-position: center;
   background-size: cover;
   overflow-y: hidden;
-
 }
 
 .container {
   overflow-x: hidden;
   display: flex;
   width: calc(100vw - 20px);
-  height: 94vh;
+  height: auto;
   flex-wrap: wrap;
   margin: 10px 10px;
   flex-direction: column;
@@ -40,7 +41,7 @@ body {
 }
 
 .card3 {
-  height: calc(30vh - 40px);
+  height: auto;
   width: calc(96% - 40px);
   border-radius: 55px;
   margin: 2% 0px 5% 0px;
@@ -90,7 +91,7 @@ body {
 }
 
 .mainCard {
-  height: 35vh;
+  height: auto;
   width: 96%;
   /* margin-right: auto; */
 
@@ -256,15 +257,30 @@ h1.temp {
 .mapboxgl-ctrl-logo {
   display: none !important;
 }
-
+.mapboxgl-ctrl-geolocate {
+  display: none !important;
+}
+.mapboxgl-ctrl-compass {
+  display: none !important;
+}
+.mapboxgl-ctrl-zoom-out {
+  display: none !important;
+}
+.mapboxgl-ctrl-zoom-in {
+  display: none !important;
+}
+.mapboxgl-ctrl-bottom-right {
+  display: none !important;
+}
 
 .bottomNav {
   height: 10vh;
   flex: 1 100%;
+  width: 100%;
   background-color: rgb(204, 206, 217, 0.8);
   border-radius: 20px 20px 0px 0px;
   border-top: 1px solid black;
-  position: sticky;
+  position: fixed;
   bottom: 0px;
   display: flex;
   justify-content: space-around;

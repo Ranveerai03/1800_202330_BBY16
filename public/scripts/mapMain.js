@@ -5,6 +5,7 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/ranveer03/clpovqe9n00c901op2x274nox', // style URL
   center: [-123.000956, 49.249599], // starting position [lng, lat]
   zoom: 9 // starting zoom
+
 });
 
 // const locations = [
@@ -52,7 +53,6 @@ const map = new mapboxgl.Map({
 // map.on('load', () => {
 //     map.setFog({});
 // })
-
 function showMap() {
 
   //------------------------------------
@@ -258,6 +258,16 @@ function showMap() {
     // );
   });
 }
+// mapView.logoView.isHidden = true
+// mapView.attributionButton.isHidden = true
 
 // Call the function to display the map with the user's location and event pins
 showMap();
+
+// function hideOrnaments() {
+//   map.ornaments.options.logo.margins = .init(x: -10000, y: 0)
+//   map.ornaments.options.attributionButton.margins = .init(x: -10000, y: 0)
+//   map.ornaments.options.scaleBar.visibility = .hidden
+//   map.ornaments.options.compass.visibility = .hidden
+// }
+// hideOrnaments()

@@ -29,7 +29,7 @@ html {
     /* border: 1px solid red; */
     /* border-radius: 25px; */
     width: calc(100% - 32px);
-    height: auto;
+    height: 40px;
     align-self: center;
     text-align: center;
     font-size: 24pt;
@@ -219,18 +219,14 @@ html {
 
     /* Support for IE. */
     font-feature-settings: 'liga';
+    position: relative;
+    top: -42px;
+    left: 170px;
+    height: auto;
 
     cursor: pointer;
 }
 
 .material-icons.md-48 {
     font-size: 48px;
-}
-
-.savedBookmark {
-    position: absolute;
-    top: 12px;
-    right: 8px;
-    height: auto;
-    /* border: 1px solid red; */
 }
