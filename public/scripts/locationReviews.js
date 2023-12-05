@@ -75,8 +75,8 @@ function populateReviews() {
     .get()
     .then((allReviews) => {
       reviews = allReviews.docs;
-      const latestReviews = reviews.slice(0, 3); // Get the latest three reviews
-      const oldReviews = reviews.slice(3); // Get the rest of the reviews
+      const latestReviews = reviews.slice(0, 4); // Get the latest three reviews
+      const oldReviews = reviews.slice(4); // Get the rest of the reviews
 
       latestReviews.forEach((doc) => {
         var condition = doc.data().condition;

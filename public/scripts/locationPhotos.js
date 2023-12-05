@@ -66,6 +66,8 @@ function formatTimestamp(last_updated) {
 
 // Query to find all photos with the matching locationID
 photosRef.where('locationID', '==', locationID)
+  .orderBy("last_updated", "desc")
+  .limit(4)
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
