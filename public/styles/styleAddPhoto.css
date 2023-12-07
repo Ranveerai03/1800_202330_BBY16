@@ -146,7 +146,6 @@ input[type=file]::file-selector-button {
 }
 
 .innerIcon {
-    /* border: 1px solid green; */
     width: 35%;
     /* fixed width for icons */
     width: 32px;
@@ -217,5 +216,4 @@ input[type=file]::file-selector-button {
     top: 12px;
     right: 8px;
     height: auto;
-    /* border: 1px solid red; */
 }

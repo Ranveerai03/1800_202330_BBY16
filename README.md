@@ -4,7 +4,6 @@
 
 SnowGo is a web application to help Metro Vancouver commuters commute efficiently during the winter by submitting and viewing reviews on road conditions before starting their commute, unlike Google Maps, which only shows delays and accidents but not the weather conditions on the roads.
 
-
 ## 2. Names of Contributors
 
 List team members and/or short bio's here...
@@ -31,7 +30,7 @@ State what a user needs to do when they come to your project. How do others star
 Here are the steps ...
 
 - Personalize the app to easily access information.
-- Search for locations that the user wants travel to. 
+- Search for locations that the user wants travel to.
 - Save the most-visited locations directly in the app.
 - Read reviews from other users to get the latest insights on your destinations before you set out.
 
@@ -40,7 +39,7 @@ Here are the steps ...
 Here are some known bugs:
 
 - Map Search Functionality: Users are currently unable to search for and save specific locations on the map.
-- Seasonal Limitations: The app's features are heavily geared towards winter conditions. 
+- Seasonal Limitations: The app's features are heavily geared towards winter conditions.
 - User-Generated Content: Our road condition updates depend on user submissions, which may not always reflect the most current situation.
 
 ## 6. Features for Future
@@ -58,7 +57,7 @@ Content of the project folder:
 ```
  Top level of project folder:
 ├── .gitignore               # Git ignore file
-├── index.html               # landing HTML file, this is what users see when you come to 
+├── index.html               # landing HTML file, this is what users see when you come to
 ├── html                     # Folder for html files
 ├── public                   # Folder for images, scripts, and styles
 url
@@ -81,7 +80,32 @@ It has the following subfolders and files:
     /thanks.html             # Thanks HTML file, showing the appreciation to users
 
 ├── images                   # Folder for images
-    /blah.jpg                # Acknowledge source
+    /backButton.jpg          # FlatIcon
+    /background.jpg          # iLikeWallpaper
+    /bookmark.png            # FlatIcon
+    /cameraIcon.png          # FlatIcon
+    /cameraIconWhite.png     # FlatIcon
+    /default_profile         # FlatIcon
+     _circle.png
+    /gallery.png             # FlatIcon
+    /home.png                # FlatIcon
+    /loupe.png               # FlatIcon
+    /plus.ico                # Favicon
+    /plus.png                # FlatIcon
+    /profile-user.png        # FlatIcon
+    /recent.png              # FlatIcon
+    /reviewIcon.jpg          # FlatIcon
+    /reviewIconWhite.jpg     # FlatIcon
+    /right-arrow.png         # FlatIcon
+    /snowRoad.jpg            # iLikeWallpaper
+    /snowy.jpg               # iLikeWallpaper
+    /snowyRoad.jpeg          # iLikeWallpaper
+    /weather.png             # FlatIcon
+    /whitePlus.png           # FlatIcon
+    /winterBackground.jpeg   # iLikeWallpaper
+    /winterBackground2.jpeg  # iLikeWallpaper
+    /winterBackground3.jpeg  # iLikeWallpaper
+    /winterBackground4.jpg   # iLikeWallpaper
 
 ├── scripts                  # Folder for scripts
     /firebaseAPI_BBY16.js    # firebase API stuff, shared across pages
@@ -103,7 +127,7 @@ It has the following subfolders and files:
 ├── styles                   # Folder for styles
     /blah.css                #
 
-Firebase hosting files: 
+Firebase hosting files:
 ├── .firebase
 	/hosting..cache
 ├── .firebaserc
@@ -115,6 +139,9 @@ Firebase hosting files:
 
 ```
 
-## Acknowledgements 
-* <a href="https://fonts.google.com/">Google Fonts</a>
-* <a href="https://getbootstrap.com/">Bootstrap</a>
+## Acknowledgements
+
+- <a href="https://fonts.google.com/">Google Fonts</a>
+- <a href="https://getbootstrap.com/">Bootstrap</a>
+- <a href="https://bcit-cst.notion.site/Tech-Tip-B01a-How-to-make-a-Post-upload-an-image-with-the-post-7e052ed0ea9b4428807a730df1b7125d">COMP 1800 Tech Tip B01a: How to make a Post, upload an image (with the post)?</a>
+- <a href="https://bcit-cst.notion.site/M01-How-to-implement-a-Mapbox-and-put-coordinates-of-events-and-the-user-location-on-the-map-59184d709f254993b16cb40f14ed0480">COMP 1800 Tech Tip M01: How to implement a Mapbox and put coordinates of events and the user location on the map?</a>

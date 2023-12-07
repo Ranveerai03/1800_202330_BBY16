@@ -44,11 +44,9 @@ function showMap() {
                 type: "Feature",
                 properties: {
                   description: `<strong>${event_name}</strong><p>${preview}</p> <br> 
-                <a href="locationReviews.html?id=${
-                  doc.id
-                }&locationName=${event_name}&city=${doc.data().city}&province=${
-                    doc.data().province
-                  }" 
+                <a href="locationReviews.html?id=${doc.id
+                    }&locationName=${event_name}&city=${doc.data().city}&province=${doc.data().province
+                    }" 
                 title="Get info about location">Read more</a>`,
                 },
                 geometry: {

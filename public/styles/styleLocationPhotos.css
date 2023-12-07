@@ -26,8 +26,6 @@ html {
 }
 
 .title {
-    /* border: 1px solid red; */
-    /* border-radius: 25px; */
     width: calc(100% - 32px);
     height: auto;
     align-self: center;
@@ -149,7 +147,6 @@ header {
 }
 
 .icons {
-    /* border: 1px solid red; */
     align-self: center;
     width: 100%;
     height: 100%;
@@ -160,7 +157,6 @@ header {
 }
 
 .innerIcon {
-    /* border: 1px solid green; */
     width: 35%;
     /* fixed width for icons */
     width: 32px;
