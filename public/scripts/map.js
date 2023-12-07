@@ -46,11 +46,9 @@ function showMap() {
                 type: "Feature",
                 properties: {
                   description: `<strong>${event_name}</strong><p>${preview}</p> <br> 
-                <a href="locationReviews.html?id=${
-                  doc.id
-                }&locationName=${event_name}&city=${doc.data().city}&province=${
-                    doc.data().province
-                  }" 
+                <a href="locationReviews.html?id=${doc.id
+                    }&locationName=${event_name}&city=${doc.data().city}&province=${doc.data().province
+                    }" 
                 title="Get info about location">Read more</a>`,
                 },
                 geometry: {
@@ -128,10 +126,7 @@ function createRoadClosureFeatures(roadClosures) {
 }
 
 map.on("load", () => {
-<<<<<<< HEAD
-=======
   // Fetch and process road closure data, then add it to the map
->>>>>>> 07084a73afdcb770ceefa057bdcd61a9bf4e584d
   fetchRoadClosures().then((roadClosures) => {
     const roadClosureFeatures = createRoadClosureFeatures(roadClosures);
     map.addSource("road-closures", {
@@ -154,15 +149,12 @@ map.on("load", () => {
         "line-width": 6,
       },
     });
-<<<<<<< HEAD
-=======
 
 
     //-----------------------------------------------------------------------
     // Add Click event listener, and handler function that creates a popup
     // that displays info from "hikes" collection in Firestore
     //-----------------------------------------------------------------------
->>>>>>> 07084a73afdcb770ceefa057bdcd61a9bf4e584d
     map.on("click", "road-closures-layer", (e) => {
       if (e.features.length > 0) {
         const closure = e.features[0].properties;

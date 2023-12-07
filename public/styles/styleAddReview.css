@@ -21,14 +21,11 @@ html {
     width: 100vw;
     min-height: 200vw;
     height: auto;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     align-items: center;
 }
 
 .title {
-    /* border: 1px solid red; */
-    /* border-radius: 25px; */
     width: calc(100% - 32px);
     height: auto;
     align-self: center;
@@ -45,7 +42,6 @@ html {
 .dropdown {
     height: 10vh;
     margin: 4%;
-    /* border: 1px solid red; */
     border-radius: 25px;
     background-color: transparent;
     max-width: 90%;
@@ -70,7 +66,6 @@ html {
 .icyCheckbox {
     height: 10vh;
     margin: 4%;
-    /* border: 1px solid red; */
     border-radius: 25px;
     background-color: transparent;
     max-width: 90%;
@@ -95,7 +90,6 @@ html {
 .snowCondition {
     height: 10vh;
     margin: 4%;
-    /* border: 1px solid red; */
     border-radius: 25px;
     background-color: transparent;
     max-width: 90%;
@@ -118,20 +112,16 @@ html {
 }
 
 .textbox {
-    /* border: 1px solid red; */
     width: 90%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* align-items: center; */
 }
 
 #reviewTitle {
     font-size: 20pt;
     font-weight: 800;
     text-align: center;
-    /* margin-bottom: 20px; */
-    /* border: 1px solid green; */
 }
 
 #review {
@@ -333,7 +323,6 @@ html {
 }
 
 .icons {
-    /* border: 1px solid red; */
     align-self: center;
     width: 100%;
     height: 100%;
@@ -344,7 +333,6 @@ html {
 }
 
 .innerIcon {
-    /* border: 1px solid green; */
     width: 35%;
     /* fixed width for icons */
     width: 32px;
@@ -356,7 +344,6 @@ html {
     background-color: #081335;
     border-radius: 20px;
     width: 85%;
-    /* fixed width for icons */
     width: 400px;
     height: 85%;
     margin-bottom: 6vh;
@@ -415,5 +402,4 @@ html {
     top: 12px;
     right: 8px;
     height: auto;
-    /* border: 1px solid red; */
 }
