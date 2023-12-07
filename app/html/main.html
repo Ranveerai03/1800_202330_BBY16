@@ -1,95 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <title>Main Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../public/styles/styleMain.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
-  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
-  <title>Document</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
-  <script
-    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
-  <link rel="stylesheet"
-    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
-    type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="../../public/styles/styleMain.css" />
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="cards card3">
-        <div class="title">Loading...</div>
-        <div id="reviewCardGroup"></div>
-      </div>
-      <div class="cards mainCard">
-        <div class="weatherCard">
-          <div class="search">
-            <input type="text" class="search-bar" placeholder="Search weather" />
-            <button class="button">
-              <img class="searchBtn" src="../../public/images/loupe.png" />
-            </button>
-          </div>
-          <div class="weather loading">
-            <h2 class="city">Vancouver</h2>
-            <h1 class="temp">10°C</h1>
-            <div class="flex">
-              <img src="https://openweathermap.org/img/wn/04n.png" alt="weather img" class="icon" />
-              <div class="description">Rainy</div>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="cards card3">
+          <div class="title">Loading...</div>
+          <div id="reviewCardGroup"></div>
+        </div>
+        <div class="cards mainCard">
+          <div class="weatherCard">
+            <div class="search">
+              <input
+                type="text"
+                class="search-bar"
+                placeholder="Search weather"
+              />
+              <button class="button">
+                <img class="searchBtn" src="../../public/images/loupe.png" />
+              </button>
             </div>
-            <div class="humidity">Humidity: 69%</div>
-            <div class="wind">Wind Speed: 6.2 km/h</div>
+            <div class="weather loading">
+              <h2 class="city">Vancouver</h2>
+              <h1 class="temp">10°C</h1>
+              <div class="flex">
+                <img
+                  src="https://openweathermap.org/img/wn/04n.png"
+                  alt="weather img"
+                  class="icon"
+                />
+                <div class="description">Rainy</div>
+              </div>
+              <div class="humidity">Humidity: 69%</div>
+              <div class="wind">Wind Speed: 6.2 km/h</div>
+            </div>
           </div>
         </div>
+        <div class="cards card2" id="mapHP"></div>
       </div>
-      <!-- <div class="card1"><span id="roadConditions">Road Conditions</span></div> -->
-      <div class="cards card2" id="mapHP"></div>
 
-      <!-- <div class="bottomNav">2</div> -->
+      <template id="card-template">
+        <div class="card">
+          <p class="condition">placeholder</p>
+          <p class="icy">placeholder</p>
+          <p class="comment">placeholder</p>
+          <p class="time">placeholder</p>
+        </div>
+      </template>
     </div>
-
-    <template id="card-template">
-      <div class="card">
-        <p class="condition">placeholder</p>
-        <p class="icy">placeholder</p>
-        <p class="comment">placeholder</p>
-        <p class="time">placeholder</p>
+    <div class="bottomNav">
+      <div class="icons" id="homeBtn">
+        <img class="innerIcon" src="../../public/images/home.png" />
       </div>
-    </template>
-  </div>
-  <div class="bottomNav">
-    <div class="icons" id="homeBtn">
-      <img class="innerIcon" src="../../public/images/home.png" />
+      <div class="icons" id="bookmarkBtn">
+        <img class="innerIcon" src="../../public/images/bookmark.png" />
+      </div>
+      <div class="icons middleIcon" id="plusBtn">
+        <img
+          class="innerIcon plusIcon"
+          src="../../public/images/whitePlus.png"
+        />
+      </div>
+      <div class="icons" id="searchBtn">
+        <img class="innerIcon" src="../../public/images/loupe.png" />
+      </div>
+      <div class="icons" id="profileBtn">
+        <img class="innerIcon" src="../../public/images/profile-user.png" />
+      </div>
     </div>
-    <div class="icons" id="bookmarkBtn">
-      <img class="innerIcon" src="../../public/images/bookmark.png" />
-    </div>
-    <div class="icons middleIcon" id="plusBtn">
-      <img class="innerIcon plusIcon" src="../../public/images/whitePlus.png" />
-    </div>
-    <div class="icons" id="searchBtn">
-      <img class="innerIcon" src="../../public/images/loupe.png" />
-    </div>
-    <div class="icons" id="profileBtn">
-      <img class="innerIcon" src="../../public/images/profile-user.png" />
-    </div>
-  </div>
 
-  <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
-  <script src="../../public/scripts/main.js"></script>
-  <script src="../../public/scripts/mainReviewCard.js"></script>
-  <script src="../../public/scripts/weather.js"></script>
-  <script src="../../public/scripts/mapMain.js"></script>
-</body>
-
+    <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+    <script src="../../public/scripts/main.js"></script>
+    <script src="../../public/scripts/mainReviewCard.js"></script>
+    <script src="../../public/scripts/weather.js"></script>
+    <script src="../../public/scripts/mapMain.js"></script>
+  </body>
 </html>

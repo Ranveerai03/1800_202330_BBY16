@@ -1,7 +1,3 @@
-//----------------------------------------------------------
-// Initialize Firebase Auth and get the current user.
-// Checks if a user is logged in and updates the profile information accordingly
-//----------------------------------------------------------
 var currentUser;
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -9,14 +5,10 @@ firebase.auth().onAuthStateChanged((user) => {
     insertNameFromFirestore(user);
     insertEmailFromFirestore(user);
   } else {
-    // Handle user not logged in
     console.log("No user logged in");
   }
 });
 
-//----------------------------------------------------------
-// Function to Fetch and Display User's Name from Firestore.
-//----------------------------------------------------------
 function insertNameFromFirestore(user) {
   db.collection("users")
     .doc(user.uid)
@@ -29,9 +21,6 @@ function insertNameFromFirestore(user) {
     });
 }
 
-//----------------------------------------------------------
-// Function to Fetch and Display User's Email from Firestore.
-//----------------------------------------------------------
 function insertEmailFromFirestore(user) {
   db.collection("users")
     .doc(user.uid)
@@ -44,9 +33,6 @@ function insertEmailFromFirestore(user) {
     });
 }
 
-//------------------------------------------------------------------------------
-// Function to change profile images on profile.html
-//------------------------------------------------------------------------------
 window.onload = function () {
   document
     .getElementById("imageUpload")
@@ -56,34 +42,22 @@ window.onload = function () {
         console.log("No file selected");
         return;
       }
-
-      // Generate a unique file name using the user's UID and current timestamp
       const user = firebase.auth().currentUser;
       const uniqueFileName = `${user.uid}-${Date.now()}-${file.name}`;
-
-      // Create a reference to Firebase Storage
       const storageRef = firebase
         .storage()
         .ref("profile_images/" + uniqueFileName);
-
-      // Upload the file
       storageRef
         .put(file)
         .then(function (snapshot) {
           console.log("Uploaded a file!");
-
-          // Get the download URL
           snapshot.ref
             .getDownloadURL()
             .then(function (downloadURL) {
               console.log("File available at", downloadURL);
-
-              // Update the user profile image in Firestore
               db.collection("users").doc(user.uid).update({
                 profileImageUrl: downloadURL,
               });
-
-              // Update the image on the page
               document.getElementById("profileImage").src = downloadURL;
             })
             .catch(function (error) {
@@ -96,28 +70,18 @@ window.onload = function () {
     });
 };
 
-//------------------------------------------------
-// Call this function when the "logout" button is clicked
-//-------------------------------------------------
 function logout() {
   firebase
     .auth()
     .signOut()
     .then(() => {
-      // Sign-out successful.
       console.log("logging out user");
-      window.location.href = "../../index.html"; // Redirect to login page
+      window.location.href = "../../index.html";
     })
-    .catch((error) => {
-      // An error happened.
-    });
+    .catch((error) => {});
 }
 
-//------------------------------------------------
-// Logout Button Event Listener
-//-------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-  // Other event listeners and code
   var logoutButton = document.getElementById("logout");
   if (logoutButton) {
     console.log("Logout button found");
@@ -127,82 +91,73 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// About Us Page Navigation
 document.getElementById("learnMore").onclick = function () {
   location.href = "../../app/html/aboutUs.html";
 };
+
 var mainLocationHere;
 function addReview() {
-    const collectionRef = db.collection("searches");
-    console.log(collectionRef);
-    collectionRef.get().then((querySnapshot) => {
-        const dropdownMenu = document.getElementById('dropdown-menu');
+  const collectionRef = db.collection("searches");
+  console.log(collectionRef);
+  collectionRef.get().then((querySnapshot) => {
+    const dropdownMenu = document.getElementById("dropdown-menu");
+    querySnapshot.forEach((doc) => {
+      const option = document.createElement("option");
+      option.text = doc.data().name;
+      dropdownMenu.add(option);
+    });
+  });
+  const dropdownMenu = document.getElementById("dropdown-menu");
+  dropdownMenu.addEventListener("change", (event) => {
+    const selectedName = event.target.value;
+    console.log(selectedName);
+    collectionRef
+      .where("name", "==", selectedName)
+      .get()
+      .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            const option = document.createElement('option');
-            option.text = doc.data().name;
-            dropdownMenu.add(option);
-            
+          mainLocationHere = doc.id;
+          saveLocation();
+          console.log(mainLocationHere);
         });
-    });
-    const dropdownMenu = document.getElementById('dropdown-menu');
-    dropdownMenu.addEventListener('change', (event) => {
-        // Do something with the selected item
-        const selectedName = event.target.value;
-        console.log(selectedName);
-        collectionRef.where('name', '==', selectedName).get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                // Do something with the data
-                mainLocationHere = doc.id;
-                saveLocation();
-                console.log(mainLocationHere);
-            });
-        });
-    });
-  }
+      });
+  });
+}
 
-  addReview();
+addReview();
 
-  function saveLocation(){
-    currentUser.update({
-      mainLocation: mainLocationHere
+function saveLocation() {
+  currentUser
+    .update({
+      mainLocation: mainLocationHere,
     })
     .then(() => {
       swal({
         title: "Success!",
         text: "Main Card Location is saved.",
-        timer: 2000
+        timer: 2000,
       });
-  })
-  }
+    });
+}
 
-  // function setLocation() {
-  //   var location = prompt("Please enter your location", "");
-  //   if (location != null) {
-  //     // Do something with the location variable
-  //     console.log(location);
-  //   }
-  // }
+function setLocation() {
+  document.getElementById("custom-text-box").style.display = "block";
+}
 
-  function setLocation() {
-    document.getElementById("custom-text-box").style.display = "block";
-  }
-  
-  function saveLocations() {
-    var location = document.getElementById("location-input").value;
-    if (location != "") {
-      // Do something with the location variable
-      currentUser.update({
-        weatherLocation: location
-      }).then(() => {
+function saveLocations() {
+  var location = document.getElementById("location-input").value;
+  if (location != "") {
+    currentUser
+      .update({
+        weatherLocation: location,
+      })
+      .then(() => {
         swal({
           title: "Success!",
           text: "Weather Location is saved.",
-          timer: 2000
+          timer: 2000,
         });
-    })
-      console.log(location);
-    }
+      });
+    console.log(location);
   }
-  
-  
-  
+}

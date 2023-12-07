@@ -1,110 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Saved</title>
+    <meta name="comp1800 template" content="My 1800 App" />
 
-<head>
-  <title>SnowGo - Saved</title>
-  <meta name="comp1800 template" content="My 1800 App" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <!-- Other libraries go here -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Other libraries go here -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Comfortaa&family=IBM+Plex+Serif:wght@300&family=Lexend&family=Onest&family=Young+Serif&display=swap"
-    rel="stylesheet">
+    <!-- Link to styles of your own -->
+    <link rel="stylesheet" href="../../public/styles/styleSaved.css" />
+  </head>
 
-  <!-- Link to styles of your own -->
-  <link rel="stylesheet" href="../../public/styles/styleSaved.css" />
-</head>
-
-<body>
-  <!------------------------------>
-  <!-- Your HTML Layout go here -->
-  <!------------------------------>
-  <!-- Stuff for body goes here -->
-  <div class="container">
-    <div class="title">Saved Locations</div>
-    <div id="add">+ Add Locations</div>
-
+  <body>
+    <!------------------------------>
+    <!-- Your HTML Layout go here -->
+    <!------------------------------>
+    <!-- Stuff for body goes here -->
     <div class="container">
-      <!-- Here is container for cards  -->
+      <div class="title">Saved Locations</div>
+      <div id="add">+ Add Locations</div>
+
       <div class="container">
-        <div id="hikeCardGroup" class="row row-cols-auto">
+        <div class="container">
+          <div id="hikeCardGroup" class="row row-cols-auto"></div>
         </div>
+      </div>
+      <template id="savedCardTemplate">
+        <a class="card-href">
+          <div class="cards" id="temp">
+            <div class="card-body">
+              <p class="card-title">Card title</p>
+              <span class="card-city">placeholder</span>
+              <p class="route-timestamp"><i>Last updated: 10:00am</i></p>
+              <br />
+            </div>
+          </div>
+        </a>
+      </template>
+    </div>
+    <div class="bottomNav">
+      <div class="icons" id="homeBtn">
+        <img class="innerIcon" src="../../public/images/home.png" />
+      </div>
+      <div class="icons" id="bookmarkBtn">
+        <img class="innerIcon" src="../../public/images/bookmark.png" />
+      </div>
+      <div class="icons middleIcon" id="plusBtn">
+        <img
+          class="innerIcon plusIcon"
+          src="../../public/images/whitePlus.png"
+        />
+      </div>
+      <div class="icons" id="searchBtn">
+        <img class="innerIcon" src="../../public/images/loupe.png" />
+      </div>
+      <div class="icons" id="profileBtn">
+        <img class="innerIcon" src="../../public/images/profile-user.png" />
       </div>
     </div>
 
-    <!-- Templates for general use, not displayed -->
-    <template id="savedCardTemplate">
-      <a class="card-href">
-        <div class="cards" id="temp">
-          <div class="card-body">
-            <p class="card-title">Card title</p>
-            <span class="card-city">placeholder</span>
-            <p class="route-timestamp"><i>Last updated: 10:00am</i></p>
-            <!-- <a class="btn btn-secondary card-href" id="read-more">Read more ...</a> -->
-            <br>
-          </div>
-        </div>
-      </a>
-    </template>
+    <!---------------------------------------------->
+    <!-- Your own JavaScript functions go here    -->
+    <!---------------------------------------------->
 
-  </div>
-  <div class="bottomNav">
-    <div class="icons" id="homeBtn">
-      <img class="innerIcon" src="../../public/images/home.png" />
-    </div>
-    <div class="icons" id="bookmarkBtn">
-      <img class="innerIcon" src="../../public/images/bookmark.png" />
-    </div>
-    <div class="icons middleIcon" id="plusBtn">
-      <img class="innerIcon plusIcon" src="../../public/images/whitePlus.png" />
-    </div>
-    <div class="icons" id="searchBtn">
-      <img class="innerIcon" src="../../public/images/loupe.png" />
-    </div>
-    <div class="icons" id="profileBtn">
-      <img class="innerIcon" src="../../public/images/profile-user.png" />
-    </div>
-  </div>
-
-  <!---------------------------------------------->
-  <!-- Your own JavaScript functions go here    -->
-  <!---------------------------------------------->
-
-  <!-- Link to scripts of your own -->
-  <!-- <script src="./scripts/script.js"></script> -->
-  <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
-  <script src="../../public/scripts/main.js"></script>
-  <script src="../../public/scripts/saved.js"></script>
-  <!-- <script src="../../public/scripts/map.js"></script> -->
-</body>
-
+    <!-- Link to scripts of your own -->
+    <script src="../../public/scripts/firebaseAPI_BBY16.js"></script>
+    <script src="../../public/scripts/main.js"></script>
+    <script src="../../public/scripts/saved.js"></script>
+  </body>
 </html>
-
-
-<!-- <div id="add">+ Add more routes</div>
-      <div class="cards">
-        <div id="route1">
-          <p class="route-name">BCIT Burnaby</p>
-          <p class="route-description">Current road conditions: Snow</p>
-          <p class="route-timestamp"><i>Last updated: 10:00am</i></p>
-        </div>
-
-        <div id="route2">
-          <p class="route-name">Route 2 Name</p>
-          <p class="route-description">Current road conditions: Snow</p>
-          <p class="route-timestamp"><i>Last updated: 10:00am</i></p>
-        </div>
-
-       <div id="add">+ Add more routes</div> -->
-</div> -->
