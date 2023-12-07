@@ -80,32 +80,32 @@ It has the following subfolders and files:
     /thanks.html             # Thanks HTML file, showing the appreciation to users
 
 ├── images                   # Folder for images
-    /backButton.jpg          # CleanPNG
-    /background.jpg          #
-    /bookmark.png            # CleanPNG
-    /cameraIcon.png          # CleanPNG
-    /cameraIconWhite.png     # CleanPNG
-    /default_profile         # CleanPNG
+    /backButton.jpg          # FlatIcon
+    /background.jpg          # iLikeWallpaper
+    /bookmark.png            # FlatIcon
+    /cameraIcon.png          # FlatIcon
+    /cameraIconWhite.png     # FlatIcon
+    /default_profile         # FlatIcon
      _circle.png
-    /gallery.png             # CleanPNG
-    /home.png                # CleanPNG
-    /loupe.png               # CleanPNG
+    /gallery.png             # FlatIcon
+    /home.png                # FlatIcon
+    /loupe.png               # FlatIcon
     /plus.ico                # Favicon
-    /plus.png                # CleanPNG
-    /profile-user.png        # CleanPNG
-    /recent.png              # CleanPNG
-    /reviewIcon.jpg          # CleanPNG
-    /reviewIconWhite.jpg     # CleanPNG
-    /right-arrow.png         # CleanPNG
-    /snowRoad.jpg            #
-    /snowy.jpg               #
-    /snowyRoad.jpeg          #
-    /weather.png             #
-    /whitePlus.png           # CleanPNG
-    /winterBackground.jpeg   #
-    /winterBackground2.jpeg  #
-    /winterBackground3.jpeg  #
-    /winterBackground4.jpg   #
+    /plus.png                # FlatIcon
+    /profile-user.png        # FlatIcon
+    /recent.png              # FlatIcon
+    /reviewIcon.jpg          # FlatIcon
+    /reviewIconWhite.jpg     # FlatIcon
+    /right-arrow.png         # FlatIcon
+    /snowRoad.jpg            # iLikeWallpaper
+    /snowy.jpg               # iLikeWallpaper
+    /snowyRoad.jpeg          # iLikeWallpaper
+    /weather.png             # FlatIcon
+    /whitePlus.png           # FlatIcon
+    /winterBackground.jpeg   # iLikeWallpaper
+    /winterBackground2.jpeg  # iLikeWallpaper
+    /winterBackground3.jpeg  # iLikeWallpaper
+    /winterBackground4.jpg   # iLikeWallpaper
 
 ├── scripts                  # Folder for scripts
     /firebaseAPI_BBY16.js    # firebase API stuff, shared across pages
