@@ -298,14 +298,6 @@ function createRoadClosureFeatures(roadClosures) {
 // then Add map features
 //------------------------------------
 map.on("load", () => {
-  // // Load the hammer image
-  // map.loadImage('../images/hammer.png', (error, image) => {
-  //   if (error) throw error;
-
-  //   // Add the image to the map style
-  //   map.addImage('hammer-icon', image);
-  // });
-
   // Fetch and process road closure data, then add it to the map
   fetchRoadClosures().then((roadClosures) => {
     const roadClosureFeatures = createRoadClosureFeatures(roadClosures);
@@ -334,16 +326,6 @@ map.on("load", () => {
       },
     });
 
-    // // Add a layer to display the road closures using hammer icon
-    // map.addLayer({
-    //   'id': 'road-closures-layer',
-    //   'type': 'symbol', // Use 'symbol' for point geometries with custom icons
-    //   'source': 'road-closures',
-    //   'layout': {
-    //     'icon-image': 'hammer-icon', // Use your custom hammer icon
-    //     'icon-size': 1 // Adjust size as needed
-    //   }
-    // });
 
     //-----------------------------------------------------------------------
     // Add Click event listener, and handler function that creates a popup
