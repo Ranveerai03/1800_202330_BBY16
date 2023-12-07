@@ -1,3 +1,5 @@
+const storage = firebase.storage();
+
 var currentUser;
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -5,7 +7,6 @@ firebase.auth().onAuthStateChanged((user) => {
     insertNameFromFirestore(user);
     insertEmailFromFirestore(user);
   } else {
-    console.log("No user logged in");
   }
 });
 
@@ -14,9 +15,7 @@ function insertNameFromFirestore(user) {
     .doc(user.uid)
     .get()
     .then((userDoc) => {
-      console.log(userDoc.data().name);
       userName = userDoc.data().name;
-      console.log(userName);
       document.getElementById("name-goes-here").innerHTML = userName;
     });
 }
@@ -26,9 +25,7 @@ function insertEmailFromFirestore(user) {
     .doc(user.uid)
     .get()
     .then((userDoc) => {
-      console.log(userDoc.data().email);
       userEmail = userDoc.data().email;
-      console.log(userEmail);
       document.getElementById("email-goes-here").innerHTML = userEmail;
     });
 }
@@ -39,7 +36,6 @@ window.onload = function () {
     .addEventListener("change", function (event) {
       const file = event.target.files[0];
       if (!file) {
-        console.log("No file selected");
         return;
       }
       const user = firebase.auth().currentUser;
@@ -50,11 +46,9 @@ window.onload = function () {
       storageRef
         .put(file)
         .then(function (snapshot) {
-          console.log("Uploaded a file!");
           snapshot.ref
             .getDownloadURL()
             .then(function (downloadURL) {
-              console.log("File available at", downloadURL);
               db.collection("users").doc(user.uid).update({
                 profileImageUrl: downloadURL,
               });
@@ -75,7 +69,6 @@ function logout() {
     .auth()
     .signOut()
     .then(() => {
-      console.log("logging out user");
       window.location.href = "../../index.html";
     })
     .catch((error) => {});
@@ -84,10 +77,8 @@ function logout() {
 document.addEventListener("DOMContentLoaded", function () {
   var logoutButton = document.getElementById("logout");
   if (logoutButton) {
-    console.log("Logout button found");
     logoutButton.addEventListener("click", logout);
   } else {
-    console.log("Logout button not found");
   }
 });
 
@@ -98,7 +89,6 @@ document.getElementById("learnMore").onclick = function () {
 var mainLocationHere;
 function addReview() {
   const collectionRef = db.collection("searches");
-  console.log(collectionRef);
   collectionRef.get().then((querySnapshot) => {
     const dropdownMenu = document.getElementById("dropdown-menu");
     querySnapshot.forEach((doc) => {
@@ -110,7 +100,6 @@ function addReview() {
   const dropdownMenu = document.getElementById("dropdown-menu");
   dropdownMenu.addEventListener("change", (event) => {
     const selectedName = event.target.value;
-    console.log(selectedName);
     collectionRef
       .where("name", "==", selectedName)
       .get()
@@ -118,7 +107,6 @@ function addReview() {
         querySnapshot.forEach((doc) => {
           mainLocationHere = doc.id;
           saveLocation();
-          console.log(mainLocationHere);
         });
       });
   });
@@ -158,6 +146,5 @@ function saveLocations() {
           timer: 2000,
         });
       });
-    console.log(location);
   }
 }

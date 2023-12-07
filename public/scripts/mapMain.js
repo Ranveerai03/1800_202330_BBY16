@@ -83,3 +83,7 @@ function showMap() {
 }
 
 showMap();
+
+document.getElementById("mapHP").onclick = function(){
+  location.href = "../../app/html/map.html";
+};

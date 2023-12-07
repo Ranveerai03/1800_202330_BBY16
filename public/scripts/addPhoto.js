@@ -1,8 +1,9 @@
+const storage = firebase.storage();
+
 var reviewLocation;
 
 function addReview() {
   const collectionRef = db.collection("searches");
-  console.log(collectionRef);
   collectionRef.get().then((querySnapshot) => {
     const dropdownMenu = document.getElementById("dropdown-menu");
     querySnapshot.forEach((doc) => {
@@ -15,14 +16,12 @@ function addReview() {
   const dropdownMenu = document.getElementById("dropdown-menu");
   dropdownMenu.addEventListener("change", (event) => {
     const selectedName = event.target.value;
-    console.log(selectedName);
     collectionRef
       .where("name", "==", selectedName)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           reviewLocation = doc.id;
-          console.log(reviewLocation);
         });
       });
   });
@@ -57,33 +56,26 @@ function savePost() {
           locationID: reviewLocation,
         })
         .then((doc) => {
-          console.log("1. Post document added!");
-          console.log(doc.id);
           uploadPic(doc.id);
         });
     } else {
-      console.log("Error, no user signed in");
     }
   });
 }
 
 function uploadPic(postDocID) {
-  console.log("inside uploadPic " + postDocID);
   var storageRef = storage.ref("images/" + postDocID + ".jpg");
 
   storageRef
     .put(ImageFile)
     .then(function () {
-      console.log("2. Uploaded to Cloud Storage.");
       storageRef.getDownloadURL().then(function (url) {
-        console.log("3. Got the download URL.");
         db.collection("photos")
           .doc(postDocID)
           .update({
             image: url,
           })
           .then(function () {
-            console.log("4. Added pic URL to Firestore.");
             swal(
               {
                 title: "Success!",
@@ -100,6 +92,6 @@ function uploadPic(postDocID) {
       });
     })
     .catch((error) => {
-      console.log("error uploading to cloud storage");
+      console.error("Error getting documents: ", error);
     });
 }

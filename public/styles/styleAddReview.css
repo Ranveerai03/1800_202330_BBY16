@@ -52,6 +52,7 @@ html {
     min-width: 90%;
     text-align: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
 #dropdown-menu {
@@ -65,6 +66,7 @@ html {
     justify-content: center;
     text-align: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
 .icyCheckbox {
@@ -77,6 +79,7 @@ html {
     min-width: 90%;
     text-align: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
 #icy-road {
@@ -90,6 +93,7 @@ html {
     justify-content: center;
     text-align: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
 .snowCondition {
@@ -102,6 +106,7 @@ html {
     min-width: 90%;
     text-align: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
 #snow-type {
@@ -115,6 +120,7 @@ html {
     justify-content: center;
     text-align: center;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
 .textbox {
@@ -130,8 +136,6 @@ html {
     font-size: 20pt;
     font-weight: 800;
     text-align: center;
-    /* margin-bottom: 20px; */
-    /* border: 1px solid green; */
 }
 
 #review {
@@ -144,10 +148,6 @@ html {
     background-color: #f8f8f8;
     font-size: 16pt;
     resize: none;
-    /* margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 10px;
-    margin: 10px 10% 50px; */
 }
 
 .submitBtn {
@@ -162,6 +162,7 @@ html {
     text-shadow: none;
     margin-top: 20px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    cursor: pointer;
 }
 
 /* dropdown menu styling */

@@ -19,11 +19,9 @@ var uiConfig = {
             bookmarks: [],
           })
           .then(function () {
-            console.log("New user added to firestore");
             window.location.assign("main.html");
           })
           .catch(function (error) {
-            console.log("Error adding new user: " + error);
           });
       } else {
         return true;

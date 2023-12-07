@@ -37,9 +37,7 @@ function showMap() {
             allSearches.forEach((doc) => {
               lat = doc.data().lat;
               lng = doc.data().lng;
-              console.log(lat, lng);
               coordinates = [lng, lat];
-              console.log(coordinates);
               event_name = doc.data().name;
               preview = doc.data().details;
               features.push({
@@ -128,10 +126,6 @@ function createRoadClosureFeatures(roadClosures) {
 }
 
 map.on("load", () => {
-<<<<<<< HEAD
-=======
-  // Fetch and process road closure data, then add it to the map
->>>>>>> 07084a73afdcb770ceefa057bdcd61a9bf4e584d
   fetchRoadClosures().then((roadClosures) => {
     const roadClosureFeatures = createRoadClosureFeatures(roadClosures);
     map.addSource("road-closures", {
@@ -154,15 +148,7 @@ map.on("load", () => {
         "line-width": 6,
       },
     });
-<<<<<<< HEAD
-=======
 
-
-    //-----------------------------------------------------------------------
-    // Add Click event listener, and handler function that creates a popup
-    // that displays info from "hikes" collection in Firestore
-    //-----------------------------------------------------------------------
->>>>>>> 07084a73afdcb770ceefa057bdcd61a9bf4e584d
     map.on("click", "road-closures-layer", (e) => {
       if (e.features.length > 0) {
         const closure = e.features[0].properties;

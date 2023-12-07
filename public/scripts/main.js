@@ -12,9 +12,6 @@ document.getElementById("searchBtn").onclick = function(){
 },
 document.getElementById("profileBtn").onclick = function(){
     location.href = "../../app/html/profile.html";
-},
-document.getElementById("mapHP").onclick = function(){
-    location.href = "../../app/html/map.html";
-};
+}
 
 

@@ -1,6 +1,5 @@
 function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
-  // console.log(urlParams);
   return urlParams.get(name);
 }
 
@@ -37,12 +36,9 @@ function doAll() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       currentUser = db.collection("users").doc(user.uid); //global
-      console.log(currentUser);
       populateReviews();
       keepBookmark();
     } else {
-      // No user is signed in.
-      console.log("No user is signed in");
       window.location.href = "login.html";
     }
   });
@@ -55,7 +51,6 @@ function populateReviews() {
 
   let params = new URL(window.location.href);
   let locationID = params.searchParams.get("id");
-  console.log(locationID);
   db.collection("reviews")
     .where("locationID", "==", locationID)
     .orderBy("timestamp", "desc")
@@ -68,11 +63,8 @@ function populateReviews() {
       latestReviews.forEach((doc) => {
         var condition = doc.data().condition;
         var icy = doc.data().icy;
-        console.log("hello");
         var comment = doc.data().comment;
         var time = doc.data().timestamp.toDate();
-
-        console.log(time);
 
         let reviewCard = reviewCardTemplate.content.cloneNode(true);
         reviewCard.querySelector(
@@ -104,7 +96,6 @@ function saveBookmark(locationDocID) {
           bookmarks: firebase.firestore.FieldValue.arrayRemove(locationDocID),
         })
         .then(() => {
-          console.log("Bookmark removed for " + locationDocID);
           document.getElementById(iconID).innerText = "bookmark_border";
         });
     } else {
@@ -113,7 +104,6 @@ function saveBookmark(locationDocID) {
           bookmarks: firebase.firestore.FieldValue.arrayUnion(locationDocID),
         })
         .then(() => {
-          console.log("Bookmark added for " + locationDocID);
           document.getElementById(iconID).innerText = "bookmark";
         });
     }
@@ -122,16 +112,12 @@ function saveBookmark(locationDocID) {
 
 let params = new URL(window.location.href);
 let locationID = params.searchParams.get("id");
-console.log(locationID);
 document.querySelector("i").id = "save-" + locationID;
 document.querySelector("i").onclick = () => saveBookmark(locationID);
 
 function keepBookmark() {
   currentUser.get().then((userDoc) => {
-    //get the user name
     var bookmarks = userDoc.data().bookmarks;
-    console.log(bookmarks);
-    console.log(locationID);
     if (bookmarks.includes(locationID)) {
       document.getElementById("save-" + locationID).innerText = "bookmark";
     } else {

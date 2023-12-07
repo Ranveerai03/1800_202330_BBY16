@@ -4,10 +4,8 @@ function doAll() {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       currentUser = db.collection("users").doc(user.uid);
-      console.log(currentUser);
       getLocation(user);
     } else {
-      console.log("No user is signed in");
       window.location.href = "login.html";
     }
   });
@@ -18,7 +16,6 @@ function getLocation(user) {
     .doc(user.uid)
     .get()
     .then((userDoc) => {
-      console.log(userDoc.data().mainLocation);
       var mainCardLocation = userDoc.data().mainLocation;
       searchForLocationName(mainCardLocation);
       populateReviews(mainCardLocation);
@@ -31,7 +28,6 @@ function searchForLocationName(mainCardLocation) {
     .get()
     .then((doc) => {
       var title = doc.data().name;
-      console.log(title);
       document.querySelector(".title").innerHTML = title;
     });
 }
@@ -40,7 +36,6 @@ function populateReviews(locationID) {
   let reviewCardTemplate = document.getElementById("card-template");
   let reviewCardGroup = document.getElementById("reviewCardGroup");
 
-  console.log(locationID);
   db.collection("reviews")
     .where("locationID", "==", locationID)
     .orderBy("timestamp", "desc")
@@ -50,13 +45,9 @@ function populateReviews(locationID) {
       if (reviews.length > 0) {
         const doc = reviews[0];
         var condition = doc.data().condition;
-        console.log(condition);
         var icy = doc.data().icy;
-        console.log("hello");
         var comment = doc.data().comment;
         var time = doc.data().timestamp.toDate();
-
-        console.log(time);
 
         let reviewCard = reviewCardTemplate.content.cloneNode(true);
         reviewCard.querySelector(

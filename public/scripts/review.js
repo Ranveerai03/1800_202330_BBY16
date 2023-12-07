@@ -10,27 +10,21 @@ function savePost() {
           last_updated: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then((doc) => {
-          console.log("1. Post document added!");
-          console.log(doc.id);
           uploadPic(doc.id);
         });
     } else {
-      console.log("Error, no user signed in");
     }
   });
 }
 
 function savePostIDforUser(postDocID) {
   firebase.auth().onAuthStateChanged((user) => {
-    console.log("user id is: " + user.uid);
-    console.log("postdoc id is: " + postDocID);
     db.collection("users")
       .doc(user.uid)
       .update({
         myposts: firebase.firestore.FieldValue.arrayUnion(postDocID),
       })
       .then(() => {
-        console.log("5. Saved to user's document!");
         alert("Post is complete!");
       })
       .catch((error) => {
@@ -41,7 +35,6 @@ function savePostIDforUser(postDocID) {
 var reviewLocation;
 function addReview() {
   const collectionRef = db.collection("searches");
-  console.log(collectionRef);
   collectionRef.get().then((querySnapshot) => {
     const dropdownMenu = document.getElementById("dropdown-menu");
     querySnapshot.forEach((doc) => {
@@ -53,14 +46,12 @@ function addReview() {
   const dropdownMenu = document.getElementById("dropdown-menu");
   dropdownMenu.addEventListener("change", (event) => {
     const selectedName = event.target.value;
-    console.log(selectedName);
     collectionRef
       .where("name", "==", selectedName)
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           reviewLocation = doc.id;
-          console.log(reviewLocation);
         });
       });
   });
@@ -76,11 +67,9 @@ function addReview() {
     const timestamp = firebase.firestore.Timestamp.now();
 
     const docRef = db.collection("searches").doc(reviewLocation);
-    console.log(docRef);
     docRef
       .update({ last_updated: timestamp })
       .then(() => {
-        console.log("Timestamp updated successfully!");
       })
       .catch((error) => {
         console.error("Error updating timestamp:", error);
@@ -95,7 +84,6 @@ function addReview() {
         locationID: reviewLocation,
       })
       .then(() => {
-        console.log("Review submitted successfully!");
         swal(
           {
             title: "Success!",

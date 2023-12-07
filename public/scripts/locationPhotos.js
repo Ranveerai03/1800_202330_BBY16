@@ -1,12 +1,12 @@
+const storage = firebase.storage();
+
 function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
-  // console.log(urlParams);
   return urlParams.get(name);
 }
 
 // Retrieve the location name from the URL
 const locationName = getQueryParam("locationName");
-console.log(locationName, "location name");
 
 // Display the location name on the page
 const locationNameElement = document.getElementById("name-goes-here");
@@ -73,7 +73,6 @@ photosRef
       const photoData = doc.data();
       const imageLink = photoData.image;
       const lastUpdated = photoData.last_updated;
-      console.log(lastUpdated, "time working?");
       const imgElement = document.createElement("img");
       imgElement.src = imageLink;
       imgElement.alt = "Image";

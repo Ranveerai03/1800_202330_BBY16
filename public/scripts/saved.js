@@ -6,7 +6,6 @@ function doAll() {
     if (user) {
       getBookmarks(user);
     } else {
-      console.log("No user is signed in");
     }
   });
 }
@@ -18,13 +17,11 @@ function getBookmarks(user) {
     .get()
     .then((userDoc) => {
       var bookmarks = userDoc.data().bookmarks;
-      console.log(bookmarks);
 
       let newcardTemplate = document.getElementById("savedCardTemplate");
 
       for (let i = bookmarks.length - 1; i >= 0; i--) {
         const thisLocationID = bookmarks[i];
-        console.log(thisLocationID);
         db.collection("searches")
           .doc(thisLocationID)
           .get()
@@ -35,8 +32,6 @@ function getBookmarks(user) {
             var city = doc.data().city;
             var ts = doc.data().last_updated.toDate();
             var time = new Date(ts).toLocaleString();
-            console.log(time + "hahahaha");
-            console.log(docID);
             let newcard = newcardTemplate.content.cloneNode(true);
             newcard.querySelector(".card-title").innerHTML = title;
             newcard.querySelector(".card-city").innerHTML = city;

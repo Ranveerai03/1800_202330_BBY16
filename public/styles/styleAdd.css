@@ -45,18 +45,6 @@ html {
   border-radius: 0px 0px 20px 20px;
 }
 
-/* header {
-    font-size: 20pt;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100vw;
-    background: #E8E9EC;
-    padding: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-} */
-
 .card {
   display: flex;
   flex-direction: column;
@@ -95,11 +83,10 @@ html {
   background-color: #798199;
   color: white;
   border-radius: 25px;
-  /* display: grid;
-    grid-template-columns: 1fr 3fr; */
   margin-bottom: 25px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
 }
 
 .review-button img {
@@ -113,8 +100,7 @@ html {
   border-radius: 25px;
   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
-  /* display: grid;
-    grid-template-columns: 1fr 3fr; */
+  cursor: pointer;
 }
 
 .photo-button img {

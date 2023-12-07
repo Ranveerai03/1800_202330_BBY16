@@ -187,7 +187,6 @@ html {
 #aboutus {
   font-size: 20pt;
   padding: 10px;
-  cursor: pointer;
 }
 
 #aboutus:hover {
@@ -199,6 +198,7 @@ html {
   /* border: 1px solid red; */
   margin: 0px;
   width: 96%;
+  cursor: pointer;
 }
 
 #dropdown-menu {
@@ -207,6 +207,7 @@ html {
   border-radius: 10px;
   text-align: center;
   height: 40px;
+  cursor: pointer;
 }
 
 #settings {

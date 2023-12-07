@@ -27,12 +27,9 @@ function savePost() {
           last_updated: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then((doc) => {
-          console.log("1. Post document added!");
-          console.log(doc.id);
           uploadPic(doc.id);
         });
     } else {
-      console.log("Error, no user signed in");
     }
   });
 }
