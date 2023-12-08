@@ -49,7 +49,7 @@ function getBookmarks(user) {
               doc.data().province +
               "";
 
-            hikeCardGroup.appendChild(newcard);
+            locationCardGroup.appendChild(newcard);
           });
       }
     });
