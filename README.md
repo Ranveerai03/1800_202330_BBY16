@@ -87,6 +87,7 @@ It has the following subfolders and files:
     /cameraIconWhite.png     # FlatIcon
     /default_profile         # chatGPT
      _circle.png
+    /logo.jpg                # chatGPT
     /gallery.png             # FlatIcon
     /home.png                # FlatIcon
     /loupe.png               # FlatIcon
@@ -111,6 +112,7 @@ It has the following subfolders and files:
     /firebaseAPI_BBY16.js    # firebase API stuff, shared across pages
     /add.js                  # JS for add.html
     /addPhoto.js             # JS for addPhoto.html
+    /addReview.js            # JS for addReview.html
     /authentication.js       # firebase authentication, shared across pages
     /index.js                # JS for index.html
     /locationPhotos.js       # JS for locationPhotos.html
