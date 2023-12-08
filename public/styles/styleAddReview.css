@@ -247,3 +247,43 @@ html {
   right: 8px;
   height: auto;
 }
+
+@media screen and (min-width: 1280px) {
+  .container {
+    display: flex;
+    width: 100vw;
+    min-height: 120vh;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .bottomNav {
+    height: 10vh;
+    flex: 1 100%;
+    background-color: rgb(204, 206, 217, 0.8);
+    border-radius: 20px 20px 0px 0px;
+    border-top: 1px solid black;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .middleIcon {
+    background-color: #081335;
+    border-radius: 20px;
+    width: 26%;
+    height: 90%;
+    margin-bottom: 6%;
+  }
+
+  .innerIcon {
+    width: 10%;
+    height: 40%;
+    align-self: center;
+  }
+
+  .plusIcon {
+    width: 70%;
+    height: 80%;
+  }
+}

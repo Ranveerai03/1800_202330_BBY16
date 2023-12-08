@@ -126,3 +126,31 @@ body {
 a {
   all: unset;
 }
+
+@media screen and (min-width: 1280px) {
+  body {
+    width: 100vw;
+    min-height: 120vh;
+    height: auto;
+    background-color: rgb(204, 206, 217);
+  }
+
+  .middleIcon {
+    background-color: #081335;
+    border-radius: 20px;
+    width: 26%;
+    height: 90%;
+    margin-bottom: 6%;
+  }
+
+  .innerIcon {
+    width: 10%;
+    height: 40%;
+    align-self: center;
+  }
+
+  .plusIcon {
+    width: 70%;
+    height: 80%;
+  }
+}
