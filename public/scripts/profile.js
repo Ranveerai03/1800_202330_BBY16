@@ -10,6 +10,8 @@ firebase.auth().onAuthStateChanged((user) => {
     currentUser = db.collection("users").doc(user.uid);
     insertNameFromFirestore(user);
     insertEmailFromFirestore(user);
+    // Add the line to fetch the profile image
+    fetchProfileImage(user); 
   } else {
   }
 });
@@ -39,6 +41,20 @@ function insertEmailFromFirestore(user) {
       document.getElementById("email-goes-here").innerHTML = userEmail;
     });
 }
+
+//------------------------------------------------------------------------------
+// Function to fetch and display the profile image URL from Firestore
+//------------------------------------------------------------------------------
+function fetchProfileImage(user) {
+  db.collection("users").doc(user.uid).get().then((doc) => {
+    if (doc.exists && doc.data().profileImageUrl) {
+      document.getElementById("profileImage").src = doc.data().profileImageUrl;
+    }
+  }).catch(function(error) {
+    //console.error("Error fetching profile image: ", error);
+  });
+}
+
 
 //------------------------------------------------------------------------------
 // Function to change profile images on profile.html
