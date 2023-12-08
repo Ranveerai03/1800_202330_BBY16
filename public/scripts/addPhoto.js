@@ -63,19 +63,39 @@ function savePost() {
   });
 }
 
+//------------------------------------------------
+// So, a new post document has just been added
+// and it contains a bunch of fields.
+// We want to store the image associated with this post,
+// such that the image name is the postid (guaranteed unique).
+// 
+// This function is called AFTER the post has been created, 
+// and we know the post's document id.
+//------------------------------------------------
 function uploadPic(postDocID) {
   var storageRef = storage.ref("images/" + postDocID + ".jpg");
 
   storageRef
     .put(ImageFile)
+
+    // AFTER .put() is done
     .then(function () {
       storageRef.getDownloadURL().then(function (url) {
+
+        // Now that the image is on Storage, we can go back to the
+        // post document, and update it with an "image" field
+        // that contains the url of where the picture is stored.
         db.collection("photos")
           .doc(postDocID)
           .update({
-            image: url,
+            image: url, // Save the URL into users collection
           })
           .then(function () {
+
+            // One last thing to do:
+            // save this postID into an array for the OWNER
+            // so we can show "my posts" in the future
+            // savePostIDforUser(postDocID);
             swal(
               {
                 title: "Success!",

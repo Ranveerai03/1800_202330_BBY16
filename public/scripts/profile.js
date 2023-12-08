@@ -1,5 +1,9 @@
 const storage = firebase.storage();
 
+//----------------------------------------------------------
+// Initialize Firebase Auth and get the current user.
+// Checks if a user is logged in and updates the profile information accordingly
+//----------------------------------------------------------
 var currentUser;
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
@@ -10,6 +14,9 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 
+//----------------------------------------------------------
+// Function to Fetch and Display User's Name from Firestore.
+//----------------------------------------------------------
 function insertNameFromFirestore(user) {
   db.collection("users")
     .doc(user.uid)
@@ -20,6 +27,9 @@ function insertNameFromFirestore(user) {
     });
 }
 
+//----------------------------------------------------------
+// Function to Fetch and Display User's Email from Firestore.
+//----------------------------------------------------------
 function insertEmailFromFirestore(user) {
   db.collection("users")
     .doc(user.uid)
@@ -30,6 +40,9 @@ function insertEmailFromFirestore(user) {
     });
 }
 
+//------------------------------------------------------------------------------
+// Function to change profile images on profile.html
+//------------------------------------------------------------------------------
 window.onload = function () {
   document
     .getElementById("imageUpload")
@@ -38,20 +51,29 @@ window.onload = function () {
       if (!file) {
         return;
       }
+      // Generate a unique file name using the user's UID and current timestamp
       const user = firebase.auth().currentUser;
       const uniqueFileName = `${user.uid}-${Date.now()}-${file.name}`;
+      
+      // Create a reference to Firebase Storage
       const storageRef = firebase
         .storage()
         .ref("profile_images/" + uniqueFileName);
+      
+      // Upload the file
       storageRef
         .put(file)
         .then(function (snapshot) {
+          
+          // Get the download URL
           snapshot.ref
             .getDownloadURL()
             .then(function (downloadURL) {
+              // Update the user profile image in Firestore
               db.collection("users").doc(user.uid).update({
                 profileImageUrl: downloadURL,
               });
+              // Update the image on the page
               document.getElementById("profileImage").src = downloadURL;
             })
             .catch(function (error) {
@@ -64,6 +86,9 @@ window.onload = function () {
     });
 };
 
+//-------------------------------------------------------
+// Call this function when the "logout" button is clicked
+//-------------------------------------------------------
 function logout() {
   firebase
     .auth()
@@ -74,7 +99,11 @@ function logout() {
     .catch((error) => {});
 }
 
+//-------------------------------------------------
+// Logout Button Event Listener
+//-------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
+  // Other event listeners and code
   var logoutButton = document.getElementById("logout");
   if (logoutButton) {
     logoutButton.addEventListener("click", logout);
@@ -82,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+// About Us Page Navigation
 document.getElementById("learnMore").onclick = function () {
   location.href = "../../app/html/aboutUs.html";
 };

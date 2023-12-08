@@ -48,9 +48,10 @@ const photosRef = db.collection("photos");
 // Select the element where you want to display the images
 const imagesContainer = document.getElementById("images-container");
 
+// Function to format the timestamp to date and time format
 function formatTimestamp(last_updated) {
   const { seconds, nanoseconds } = last_updated;
-  const date = new Date(seconds * 1000 + nanoseconds / 1000000);
+  const date = new Date(seconds * 1000 + nanoseconds / 1000000); // Convert to milliseconds
   const options = {
     year: "numeric",
     month: "2-digit",
@@ -63,6 +64,7 @@ function formatTimestamp(last_updated) {
   return date.toLocaleString("en-US", options);
 }
 
+// Query to find all photos with the matching locationID
 photosRef
   .where("locationID", "==", locationID)
   .orderBy("last_updated", "desc")
@@ -70,15 +72,23 @@ photosRef
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
+
+      // Retrieve the link from each document data
       const photoData = doc.data();
       const imageLink = photoData.image;
       const lastUpdated = photoData.last_updated;
+
+      // Create an image element for each retrieved image
       const imgElement = document.createElement("img");
       imgElement.src = imageLink;
       imgElement.alt = "Image";
+
+      // Create a text element for the timestamp
       const timestampElement = document.createElement("p");
       const formattedTimestamp = formatTimestamp(lastUpdated);
       timestampElement.textContent = `Last Updated: ${formattedTimestamp}`;
+      
+      // Append each image element and timestamp to the images container
       imagesContainer.appendChild(imgElement);
       imagesContainer.appendChild(timestampElement);
     });
@@ -87,13 +97,20 @@ photosRef
     console.error("Error getting documents: ", error);
   });
 
+// Function to redirect to a new URL with location info
 function redirectToNewURL() {
+
+  // Get the query string from the current URL
   var queryString = window.location.search;
+  
+  // Parse the query string to extract the id parameter
   var urlParams = new URLSearchParams(queryString);
   var id = urlParams.get("id");
   var locationName = urlParams.get("locationName");
   var city = urlParams.get("city");
   var province = urlParams.get("province");
+  
+  // Construct the new URL with the extracted id parameter
   var newUrl =
     "../../app/html/locationReviews.html?id=" +
     id +
@@ -103,6 +120,9 @@ function redirectToNewURL() {
     city +
     "&province=" +
     province;
-  window.location.href = newUrl;
+    // Redirect to the new URL on the same page
+    window.location.href = newUrl;
 }
+
+// Add event listener to the "photos" button
 document.getElementById("reviews").addEventListener("click", redirectToNewURL);
