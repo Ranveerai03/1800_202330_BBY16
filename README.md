@@ -77,7 +77,7 @@ It has the following subfolders and files:
     /map.html                # Map HTML file, showing the app's story
     /profile.html            # Profile HTML file, the user's profile
     /saved.html              # Saved HTML file, showing the users' saved locations
-    /thanks.html             # Thanks HTML file, showing the appreciation to users
+    /template.html           # Template HTML file
 
 ├── images                   # Folder for images
     /backButton.jpg          # FlatIcon
@@ -85,7 +85,7 @@ It has the following subfolders and files:
     /bookmark.png            # FlatIcon
     /cameraIcon.png          # FlatIcon
     /cameraIconWhite.png     # FlatIcon
-    /default_profile         # FlatIcon
+    /default_profile         # chatGPT
      _circle.png
     /gallery.png             # FlatIcon
     /home.png                # FlatIcon
@@ -125,7 +125,18 @@ It has the following subfolders and files:
     /weather.js              # JS for weather widget on main.html
 
 ├── styles                   # Folder for styles
-    /blah.css                #
+    /styleAboutUs.css        # CSS for aboutUs.html
+    /styleAdd.css            # CSS for add.html
+    /styleAddPhoto.css       # CSS for addPhoto.html
+    /styleAddReview.css      # CSS for addReview.html
+    /styleindex.css          # CSS for index.html
+    /styleLocationPhotos.css # CSS for locationPhotos.html
+    /styleLocationReviews.css# CSS for locationReviews.html
+    /stylelogin.css          # CSS for login.html
+    /styleMain.css           # CSS for main.html
+    /styleMap.css            # CSS for map.html
+    /styleprofile.css        # CSS for profile.html
+    /styleSaved.css          # CSS for saved.html
 
 Firebase hosting files:
 ├── .firebase
@@ -143,5 +154,6 @@ Firebase hosting files:
 
 - <a href="https://fonts.google.com/">Google Fonts</a>
 - <a href="https://getbootstrap.com/">Bootstrap</a>
+- <a href="https://chat.openai.com//">chatGPT</a>
 - <a href="https://bcit-cst.notion.site/Tech-Tip-B01a-How-to-make-a-Post-upload-an-image-with-the-post-7e052ed0ea9b4428807a730df1b7125d">COMP 1800 Tech Tip B01a: How to make a Post, upload an image (with the post)?</a>
 - <a href="https://bcit-cst.notion.site/M01-How-to-implement-a-Mapbox-and-put-coordinates-of-events-and-the-user-location-on-the-map-59184d709f254993b16cb40f14ed0480">COMP 1800 Tech Tip M01: How to implement a Mapbox and put coordinates of events and the user location on the map?</a>
