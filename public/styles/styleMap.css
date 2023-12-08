@@ -6,13 +6,8 @@ body {
 }
 
 #map {
-  /* position: absolute; 
-    top: 0; 
-    bottom: 0;  */
   width: 100%;
-  /* Changed from 90vh to 95vh */
   height: 100vh;
-  /* Extend the map slightly under the navbar */
   margin-bottom: -5vh;
 }
 
@@ -35,7 +30,6 @@ body {
   display: flex;
   width: 100%;
   justify-content: space-around;
-  /* Ensure the layer of bottom navbar is on top of the map */
   z-index: 1000;
 }
 
@@ -45,7 +39,6 @@ body {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  /* Changes the cursor to indicate it's clickable */
   cursor: pointer;
 }
 

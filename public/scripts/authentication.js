@@ -28,9 +28,6 @@ var uiConfig = {
       }
       return false;
     },
-    uiShown: function () {
-      document.getElementById("loader").style.display = "none";
-    },
   },
   signInFlow: "popup",
   signInSuccessUrl: "main.html",

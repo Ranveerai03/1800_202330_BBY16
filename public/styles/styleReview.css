@@ -1,166 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
 
 body,
 html {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0%;
-    font-family: 'Open Sans Light', sans-serif;
-    font-style: normal;
-
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0%;
+  font-family: "Open Sans Light", sans-serif;
+  font-style: normal;
 }
 
 .wrapper {
-    overflow: hidden;
-    background-color: #E8E9EC;
+  overflow: hidden;
+  background-color: #e8e9ec;
 }
 
 .container {
-    margin: 10px 10px;
-    align-items: center;
-    overflow-x: hidden;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: calc(100vw-20px);
-    height: 88vh;
+  margin: 10px 10px;
+  align-items: center;
+  overflow-x: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: calc(100vw-20px);
+  height: 88vh;
 }
 
-
 textarea {
-    font-family: 'Open Sans Light', sans-serif;
-    font-size: 14px;
-    display: flex;
+  font-family: "Open Sans Light", sans-serif;
+  font-size: 14px;
+  display: flex;
 }
 
 button {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
 }
 
 .textbox {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .review {
-    display: flex;
-    height: 10vh;
-    width: 94%;
-    margin-right: auto;
-    margin-left: auto;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    font-size: 20px;
-    background-color: #8CC2E3;
-    border-radius: 55px;
-    border: 2px solid black;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  display: flex;
+  height: 10vh;
+  width: 94%;
+  margin-right: auto;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  font-size: 20px;
+  background-color: #8cc2e3;
+  border-radius: 55px;
+  border: 2px solid black;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .locationCard {
-    display: flex;
-    height: 8vh;
-    width: 95%;
-    align-self: center;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    font-size: 30px;
-    padding: 3px;
-    background-color: #FFFFFF;
-    border-radius: 55px;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  display: flex;
+  height: 8vh;
+  width: 95%;
+  align-self: center;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  padding: 3px;
+  background-color: #ffffff;
+  border-radius: 55px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-    margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 h1 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #ddd;
+  background-color: #ddd;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
-    background-color: #081335;
+  background-color: #081335;
 }
 
 .textbox {
-    display: flex;
-    padding-top: 0%;
+  display: flex;
+  padding-top: 0%;
 }
 
 .bottomNav {
-    height: 10vh;
-    flex: 1 100%;
-    background-color: #FFFFFF;
-    border-radius: 20px 20px 0px 0px;
-    border-top: 1px solid black;
-    position: sticky;
-    bottom: 0;
-    display: flex;
-    justify-content: space-around;
+  height: 10vh;
+  flex: 1 100%;
+  background-color: #ffffff;
+  border-radius: 20px 20px 0px 0px;
+  border-top: 1px solid black;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
 }
 
 .icons {
-    align-self: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    /* Changes the cursor to indicate it's clickable */
-    cursor: pointer;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
 }
 
 .innerIcon {
-    width: 35%;
-    height: 35%;
-    align-self: center;
-
+  width: 35%;
+  height: 35%;
+  align-self: center;
 }
 
 .middleIcon {
-    background-color: #081335;
-    border-radius: 20px;
-    width: 85%;
-    height: 85%;
-    margin-bottom: 12%;
+  background-color: #081335;
+  border-radius: 20px;
+  width: 85%;
+  height: 85%;
+  margin-bottom: 12%;
 }
 
 .plusIcon {
-    width: 50%;
-    height: 50%;
+  width: 50%;
+  height: 50%;
 }

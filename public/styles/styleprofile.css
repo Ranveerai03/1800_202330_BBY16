@@ -9,7 +9,7 @@ body,
 html {
   width: 100vw;
   height: auto;
-  background-color: rgb(204, 206, 217)
+  background-color: rgb(204, 206, 217);
 }
 
 .wrapper {
@@ -47,8 +47,6 @@ html {
   background-color: rgb(204, 206, 217, 0.9);
   border-radius: 35px;
   width: 96%;
-  /* margin-left: 50px;
-  margin-right: 50px; */
   margin: 20px 0px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
@@ -92,7 +90,6 @@ html {
   margin-top: 10px;
   margin-bottom: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  /* Changes the cursor to indicate it's clickable */
   cursor: pointer;
 }
 
@@ -110,7 +107,6 @@ html {
   margin-top: 10px;
   margin-bottom: 20px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-  /* Changes the cursor to indicate it's clickable */
   cursor: pointer;
 }
 
@@ -144,8 +140,6 @@ html {
   width: calc(96% - 40px);
   background-color: rgb(204, 206, 217, 0.9);
   border-radius: 35px;
-  /* margin-left: 50px;
-  margin-right: 50px; */
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   padding: 20px;
 }
@@ -174,11 +168,9 @@ html {
 
 #aboutus:hover {
   color: #081335;
-  /* or a different color for hover state */
 }
 
 .mainLocation {
-  /* border: 1px solid red; */
   margin: 0px;
   width: 96%;
   cursor: pointer;
@@ -215,12 +207,10 @@ html {
   height: 100%;
   display: flex;
   justify-content: space-evenly;
-  /* Changes the cursor to indicate it's clickable */
   cursor: pointer;
 }
 
 .innerIcon {
-  /* border: 1px solid green; */
   width: 35%;
   height: 35%;
   align-self: center;

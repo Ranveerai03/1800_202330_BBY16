@@ -37,7 +37,6 @@ body {
 
 .appName {
   flex: 1 100%;
-  /* align-self: top; */
   font-size: 80px;
   margin-top: 15%;
   font-weight: 800;
