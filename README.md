@@ -118,12 +118,11 @@ It has the following subfolders and files:
     /locationPhotos.js       # JS for locationPhotos.html
     /locationReviews.js      # JS for locationReviews.html
     /main.js                 # JS for main.html
-    /mainReviewCard.js       # JS for login.html
+    /mainReviewCard.js       # JS for review card on main.html
     /map.js                  # JS for map.html
     /mapMain.js              # JS for map on main.html
     /profile.js              # JS for profile.html
     /saved.js                # JS for saved.html
-    /search.js               # JS to write searches
     /weather.js              # JS for weather widget on main.html
 
 ├── styles                   # Folder for styles
