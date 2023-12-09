@@ -1,0 +1,285 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-size: 16pt;
+  font-family: Lexend;
+}
+
+body,
+html {
+  width: 100vw;
+  height: auto;
+  background-color: rgb(204, 206, 217);
+}
+
+.wrapper {
+  background-color: #e8e9ec;
+  margin: 0;
+  background-image: url("../../public/images/snowRoad.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  height: auto;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  width: calc(100% - 32px);
+  height: auto;
+  align-self: center;
+  text-align: center;
+  font-size: 24pt;
+  font-weight: 900;
+
+  padding: 16px;
+  background-color: rgb(204, 206, 217);
+
+  border-radius: 0px 0px 20px 20px;
+}
+
+.profile-card {
+  background-color: rgb(204, 206, 217, 0.9);
+  border-radius: 35px;
+  width: 96%;
+  margin: 20px 0px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.profile-img {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.profile-img img {
+  width: 125px;
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+}
+
+.email {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+}
+
+.logout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #081335;
+  color: white;
+  padding: 15px;
+  border-radius: 25px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  cursor: pointer;
+}
+
+#upload {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #081335;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 25px;
+  margin-left: 120px;
+  margin-right: 120px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  cursor: pointer;
+}
+
+#setLocation {
+  border: 1px solid black;
+  box-shadow: 5px 5px 15px 1px inset rgba(0, 0, 0, 0.1);
+  width: 96%;
+  background-color: rgb(204, 206, 217, 08);
+  border-radius: 10px;
+  text-align: center;
+  height: calc(40px);
+  padding-top: 2%;
+  cursor: pointer;
+}
+
+#learnMore {
+  border: 1px solid black;
+  box-shadow: 5px 5px 15px 1px inset rgba(0, 0, 0, 0.1);
+  width: 96%;
+  background-color: rgb(204, 206, 217, 08);
+  border-radius: 10px;
+  text-align: center;
+  height: calc(40px);
+  padding-top: 2%;
+  cursor: pointer;
+}
+
+.settings-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(96% - 40px);
+  background-color: rgb(204, 206, 217, 0.9);
+  border-radius: 35px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 20px;
+}
+
+#notif-header {
+  font-size: 20pt;
+  padding: 10px;
+}
+
+#notif1 {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#security-header {
+  font-size: 20pt;
+  padding: 10px;
+}
+
+#aboutus {
+  font-size: 20pt;
+  padding: 10px;
+}
+
+#aboutus:hover {
+  color: #081335;
+}
+
+.mainLocation {
+  margin: 0px;
+  width: 96%;
+  cursor: pointer;
+}
+
+#dropdown-menu {
+  width: 100%;
+  background-color: rgb(204, 206, 217, 08);
+  border-radius: 10px;
+  text-align: center;
+  height: 40px;
+  cursor: pointer;
+}
+
+#settings {
+  padding: 10px;
+}
+
+.bottomNav {
+  height: 10vh;
+  flex: 1 100%;
+  background-color: rgb(204, 206, 217, 0.8);
+  border-radius: 20px 20px 0px 0px;
+  border-top: 1px solid black;
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icons {
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.innerIcon {
+  width: 35%;
+  height: 35%;
+  align-self: center;
+}
+
+.middleIcon {
+  background-color: #081335;
+  border-radius: 20px;
+  width: 85%;
+  height: 85%;
+  margin-bottom: 12%;
+}
+
+.plusIcon {
+  width: 50%;
+  height: 50%;
+}
+@media screen and (min-width: 1280px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(204, 206, 217);
+  }
+
+  .wrapper {
+    background-color: #e8e9ec;
+    margin: 0;
+    height: 100%;
+    background-image: url("../../public/images/snowRoad.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+
+  .container {
+    display: flex;
+    width: 100vw;
+    height: 100%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bottomNav {
+    height: 10vh;
+    flex: 1 100%;
+    background-color: rgb(204, 206, 217, 0.8);
+    border-radius: 20px 20px 0px 0px;
+    border-top: 1px solid black;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  .middleIcon {
+    background-color: #081335;
+    border-radius: 20px;
+    width: 26%;
+    height: 90%;
+    margin-bottom: 6%;
+  }
+
+  .innerIcon {
+    width: 10%;
+    height: 40%;
+    align-self: center;
+  }
+
+  .plusIcon {
+    width: 70%;
+    height: 80%;
+  }
+}
