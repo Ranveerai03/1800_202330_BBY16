@@ -131,13 +131,13 @@ It has the following subfolders and files:
     /styleAdd.css            # CSS for add.html
     /styleAddPhoto.css       # CSS for addPhoto.html
     /styleAddReview.css      # CSS for addReview.html
-    /styleindex.css          # CSS for index.html
+    /styleIndex.css          # CSS for index.html
     /styleLocationPhotos.css # CSS for locationPhotos.html
     /styleLocationReviews.css# CSS for locationReviews.html
-    /stylelogin.css          # CSS for login.html
+    /styleLogin.css          # CSS for login.html
     /styleMain.css           # CSS for main.html
     /styleMap.css            # CSS for map.html
-    /styleprofile.css        # CSS for profile.html
+    /styleProfile.css        # CSS for profile.html
     /styleSaved.css          # CSS for saved.html
 
 Firebase hosting files:
